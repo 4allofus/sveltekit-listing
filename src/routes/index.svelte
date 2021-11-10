@@ -15,7 +15,7 @@
     //untuk posts
     import 'papercss/dist/paper.min.css'
     import Listing from './_listing.svelte'
-    import { Button } from 'spaper';
+    import { Alert, Button } from 'spaper';
     import Typewriter from './Typewriter.svelte'
 
     export let posts;
@@ -93,11 +93,15 @@
 
 <div class="paper container-lg">
     <div class="row">
-        {#each paginatedItems as item}
-        <div class="sm-6 md-4 lg-3 col">
-          <Listing title={item.title} subtitle={item.title} body={item.body} web={'./blog/' + item.id}/>
-        </div>
-        {/each}
+        {#if paginatedItems.length}
+          {#each paginatedItems as item}
+          <div class="sm-6 md-4 lg-3 col">
+            <Listing title={item.title} subtitle={item.title} body={item.body} web={'./blog/' + item.id}/>
+          </div>
+          {/each}
+        {:else}
+          <Alert type="danger">No data for : <i>{searchWord}</i></Alert>
+        {/if}
     </div>
 
     <LightPaginationNav
