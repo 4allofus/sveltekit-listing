@@ -36,7 +36,7 @@
     $: console.log(searchPost)
 
     //ready to paginate
-    $: paginatedItems = paginate({ searchPost, pageSize, currentPage })
+    $: paginatedItems = paginate({ items, pageSize, currentPage })
 
 </script>
 
