@@ -35,7 +35,7 @@
     });
     }
     
-    $: console.log(searchPost)
+    $: console.log(items)
 
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
