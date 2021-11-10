@@ -1,0 +1,19 @@
+{
+  "name": "sveltekit-listing",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "svelte-kit dev",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/kit": "next",
+    "svelte": "^3.42.6"
+  },
+  "type": "module",
+  "dependencies": {
+    "papercss": "^1.8.2",
+    "spaper": "^0.1.2",
+    "svelte-paginate": "^0.0.1"
+  }
+}
