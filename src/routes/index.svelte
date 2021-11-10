@@ -31,11 +31,11 @@
     
     function searchFunction(){
       items = posts.filter((post) => {
-      return post.title.includes(searchWord) || post.body.includes(searchWord);
-    });
+        return post.title.includes(searchWord) || post.body.includes(searchWord);
+      });
     }
     
-    $: console.log(items)
+    //$: console.log(items)
 
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
