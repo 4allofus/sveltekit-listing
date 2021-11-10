@@ -28,12 +28,12 @@
 
     //untuk search
     let searchWord = "";
-    /*
-    $: searchPost = items.filter((post) => {
+    
+    $searchPost = items.filter((post) => {
       return post.title.includes(searchWord) || post.body.includes(searchWord);
     });
-    */
-    //$: console.log(searchPost)
+    
+    $console.log(searchPost)
 
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
@@ -53,7 +53,7 @@
     <div class="row flex-spaces">
     <div class="form-group">
         <label for="paperInputs1">Kata kunci</label>
-        <input type="text" placeholder="misal : ruko"/>
+        <input type="text" placeholder="misal : ruko" bind:searchWord/>
       </div>
 
       <div class="form-group">
