@@ -53,7 +53,7 @@
     <div class="row flex-spaces">
     <div class="form-group">
         <label for="paperInputs1">Kata kunci {searchWord}</label>
-        <input type="text" placeholder="misal : ruko" bind:searchWord/>
+        <input type="text" placeholder="misal : ruko" bind:value={searchWord}/>
       </div>
 
       <div class="form-group">
