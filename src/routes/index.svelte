@@ -29,9 +29,11 @@
     //untuk search
     let searchWord = "";
     
-    $: searchPost = items.filter((post) => {
+    function searchFunction(){
+      items = posts.filter((post) => {
       return post.title.includes(searchWord) || post.body.includes(searchWord);
     });
+    }
     
     $: console.log(searchPost)
 
@@ -85,7 +87,7 @@
         </label>
       </fieldset>
 
-      <Button>Cari</Button>
+      <Button on:click={searchFunction}>Cari</Button>
     </div>
 </div>
 
