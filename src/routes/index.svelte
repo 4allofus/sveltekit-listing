@@ -52,7 +52,7 @@
 <div class="paper container-md">
     <div class="row flex-spaces">
     <div class="form-group">
-        <label for="paperInputs1">Kata kunci</label>
+        <label for="paperInputs1">Kata kunci {searchWord}</label>
         <input type="text" placeholder="misal : ruko" bind:searchWord/>
       </div>
 
