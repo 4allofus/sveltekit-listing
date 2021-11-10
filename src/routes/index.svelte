@@ -29,11 +29,11 @@
     //untuk search
     let searchWord = "";
     
-    $searchPost = items.filter((post) => {
+    $: searchPost = items.filter((post) => {
       return post.title.includes(searchWord) || post.body.includes(searchWord);
     });
     
-    $console.log(searchPost)
+    $: console.log(searchPost)
 
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
