@@ -36,7 +36,7 @@
     //$: console.log(searchPost)
 
     //ready to paginate
-    $: paginatedItems = paginate({ posts, pageSize, currentPage })
+    $: paginatedItems = paginate({ items, pageSize, currentPage })
 
 </script>
 
@@ -53,7 +53,7 @@
     <div class="row flex-spaces">
     <div class="form-group">
         <label for="paperInputs1">Kata kunci</label>
-        <input type="text" placeholder="misal : ruko" bind:value={searchWord}/>
+        <input type="text" placeholder="misal : ruko"/>
       </div>
 
       <div class="form-group">
@@ -91,17 +91,11 @@
 
 <div class="paper container-lg">
     <div class="row">
-      {#if paginatedItems.length}
         {#each paginatedItems as item}
         <div class="sm-6 md-4 lg-3 col">
           <Listing title={item.title} subtitle={item.title} body={item.body} web={'./blog/' + item.id}/>
         </div>
         {/each}
-        {:else}
-        <div class="row flex-spaces">
-          <div class="alert alert-danger">Sorry, no data found <b><i>{searchWord}</i></b> </div>
-        </div>
-        {/if}
     </div>
 
     <LightPaginationNav
