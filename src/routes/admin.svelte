@@ -8,17 +8,14 @@
 </script>
 
 
-<div class="paper container-md">
+<div class="paper container-lg">
   <div class="row">
     <div class="collapsible">
       <input id="collapsible1" type="checkbox" name="collapsible">
       <label for="collapsible1">Add New Listing</label>
       <div class="collapsible-body">
-        <span>Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken...</span>
-
-
-
-        
+        <span>Bacon ipsum dolor sit amet landjaeger sausage brisket, 
+          jerky drumstick fatback boudin ball tip turducken...</span>
       </div>
     </div>
   </div>
