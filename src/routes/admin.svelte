@@ -1,6 +1,6 @@
 <script>
       import 'papercss/dist/paper.min.css'
-      import { Collapsible } from 'spaper';
+      import { Collapsible, Tab } from 'spaper';
       import Table from 'spaper/components/Table.svelte';
 
       const supplies = [
@@ -13,10 +13,5 @@
 <div class="paper container-lg">  
 
   <Collapsible label="Add New Listing">Collapsible : Add New Listing</Collapsible>
+  <Table {supplies}/>
 </div>  
-
-
-<div class="paper container-lg">
-  <Table {supplies} hoverable/>
-
-</div>
