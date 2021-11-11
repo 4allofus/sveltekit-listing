@@ -8,7 +8,7 @@
 </script>
 
 <div class="paper container-lg">
-<table class="table-hover table alternating>
+<table class="table-hover table alternating">
   <thead>
     <tr>
       <th>id</th>
