@@ -22,33 +22,14 @@
               <label for="paperInputs2">Title</label>
               <input class="input-block" type="text" placeholder="Masukkan Judul">
             </div>
-
-            <label for="large-input">Keterangan</label>
-            <textarea id="large-input" placeholder="Keterangan"></textarea>
-
-            <label for="paperInputs2">Harga</label>
-            <input class="input-block" type="text" placeholder="Masukkan Harga">
-
-            <label for="paperSelects1">Satuan</label>
-            <select id="paperSelects1">
-              <option value="Jt">Juta</option>
-              <option value="M">Milliar</option>
-            </select>
-
-            <legend>Kategori</legend>
-            <label for="paperChecks1" class="paper-check">
-              <input type="checkbox" name="paperChecks" value="Rumah"> <span>Rumah</span>
-            </label>
-            <label for="paperChecks2" class="paper-check">
-              <input type="checkbox" name="paperChecks" value="Komersial"> <span>Komersial</span>
-            </label>
           </div>
         </div>
+
         
-        </div>
       </div>
     </div>
-  </div>  
+  </div>
+</div>  
 
 
 <table class="table-hover table alternating">
