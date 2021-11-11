@@ -1,7 +1,6 @@
 <script>
       import 'papercss/dist/paper.min.css'
-      import Collapsible from 'spaper';
-      import Table from 'spaper';
+      import Collapsible, { Table } from 'spaper';
 
       const supplies = [
 		    { id: '1', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
