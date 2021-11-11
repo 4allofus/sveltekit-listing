@@ -1,5 +1,7 @@
 <script>
       import 'papercss/dist/paper.min.css'
+import { Collapsible } from 'spaper';
+import Table from 'spaper/components/Table.svelte';
 
       let supplies = [
 		    { id: '1', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
@@ -8,7 +10,7 @@
 </script>
 
 
-<div class="paper container-lg">
+<div class="paper container-lg">  
   <div class="row">
     <div class="collapsible">
       <input id="collapsible1" type="checkbox" name="collapsible">
@@ -19,9 +21,14 @@
       </div>
     </div>
   </div>
+
+  <Collapsible>Collapsible : Add New Listing</Collapsible>
 </div>  
 
+
 <div class="paper container-lg">
+  <Table {supplies} hoverable/>
+
 <table class="table-hover table alternating">
   <thead>
     <tr>
