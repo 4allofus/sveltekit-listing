@@ -21,7 +21,7 @@
   </div>
 </div>  
 
-
+<div class="paper container-lg">
 <table class="table-hover table alternating">
   <thead>
     <tr>
@@ -46,5 +46,4 @@
     {/each}
   </tbody>
 </table>
-
 </div>
