@@ -16,14 +16,7 @@
       <div class="collapsible-body">
         <span>Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken...</span>
 
-        <div class="form-group">
-          <div class="row">
-            <div class="col sm-8">
-              <label for="paperInputs2">Title</label>
-              <input class="input-block" type="text" placeholder="Masukkan Judul">
-            </div>
-          </div>
-        </div>
+
 
         
       </div>
