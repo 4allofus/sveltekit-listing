@@ -7,7 +7,50 @@
 	    ];
 </script>
 
-<div class="paper container-lg">
+
+<div class="paper container-md">
+  <div class="row">
+    <div class="collapsible">
+      <input id="collapsible1" type="checkbox" name="collapsible">
+      <label for="collapsible1">Add New Listing</label>
+      <div class="collapsible-body">
+        <span>Bacon ipsum dolor sit amet landjaeger sausage brisket, jerky drumstick fatback boudin ball tip turducken...</span>
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col sm-8">
+              <label for="paperInputs2">Title</label>
+              <input class="input-block" type="text" placeholder="Masukkan Judul">
+            </div>
+
+            <label for="large-input">Keterangan</label>
+            <textarea id="large-input" placeholder="Keterangan"></textarea>
+
+            <label for="paperInputs2">Harga</label>
+            <input class="input-block" type="text" placeholder="Masukkan Harga">
+
+            <label for="paperSelects1">Satuan</label>
+            <select id="paperSelects1">
+              <option value="Jt">Juta</option>
+              <option value="M">Milliar</option>
+            </select>
+
+            <legend>Kategori</legend>
+            <label for="paperChecks1" class="paper-check">
+              <input type="checkbox" name="paperChecks" value="Rumah"> <span>Rumah</span>
+            </label>
+            <label for="paperChecks2" class="paper-check">
+              <input type="checkbox" name="paperChecks" value="Komersial"> <span>Komersial</span>
+            </label>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>  
+
+
 <table class="table-hover table alternating">
   <thead>
     <tr>
