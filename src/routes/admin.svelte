@@ -3,7 +3,7 @@
       import { Collapsible } from 'spaper';
       import Table from 'spaper/components/Table.svelte';
 
-      let supplies = [
+      const supplies = [
 		    { id: '1', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
 		    { id: '2', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' }
 	    ];
