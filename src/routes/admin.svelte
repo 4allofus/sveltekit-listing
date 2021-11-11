@@ -13,5 +13,5 @@
 <div class="paper container-lg">  
 
   <Collapsible label="Add New Listing">Collapsible : Add New Listing</Collapsible>
-  <Table {supplies}/>
+  <Tab {supplies}/>
 </div>  
