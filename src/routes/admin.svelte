@@ -4,8 +4,8 @@
       import {Table} from 'spaper';
 
       let supplies = [
-		    { id: '1', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
-		    { id: '2', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
+		    { id: 1, title: 'Rumah pik murah', harga: 5, satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
+		    { id: 2, title: 'Rumah pik murah', harga: 5, satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
 	    ];
 
 </script>
