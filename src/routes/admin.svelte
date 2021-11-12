@@ -3,7 +3,7 @@
       import {Collapsible} from 'spaper';
       import {Table} from 'spaper';
 
-      const data = [
+      let data = [
         { no: 1, title: 'Rumah pik', harga: 5, satuan: 'M', 
           detil: 'Jalan besar, hook', kategori: 'rumah' },
         { no: 2, title: 'Rumah pik', harga: 5, satuan: 'M', 
