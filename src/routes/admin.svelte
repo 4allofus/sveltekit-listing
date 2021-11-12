@@ -1,17 +1,20 @@
 <script>
       import 'papercss/dist/paper.min.css'
-      import {Collapsible, Table} from 'spaper';
+      import {Collapsible} from 'spaper';
+      import {Table} from 'spaper';
 
-      let supplies = [
-		    { id: '1', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' },
-		    { id: '2', title: 'Rumah pik murah', harga: '5', satuan: 'M', detil: 'Jl Camar 5 no 32', kategori: 'rumah' }
-	    ];
+       const data = [
+        { rank: 1, name: 'Novak Djokovic', country: 'Serbia' },
+        { rank: 2, name: 'Daniil Medvedev', country: 'Russia' },
+        { rank: 3, name: 'Stefanos Tsitsipas', country: 'Greece' },
+        { rank: 4, name: 'Alexander Zverev', country: 'Germany' },
+      ];
 
 </script>
 
 
 <div class="paper container-lg">  
 
-  <Collapsible label="Add New Listing">Collapsible : Add New Listing</Collapsible>
-  <Table {supplies} />
+  <Collapsible label="Add New Listing">Collapsible : Coba Add New Listing</Collapsible>
+  <Table {data} />
 </div>  
