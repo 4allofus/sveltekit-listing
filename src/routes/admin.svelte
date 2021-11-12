@@ -28,7 +28,7 @@
       <div class="form-group">
         <Input value="Block level" block />
       </div>
-      Listing : {title}
+      Listing 
     
   </Collapsible>
   <Table {data} hoverable/>
