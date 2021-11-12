@@ -22,12 +22,12 @@
 <div class="paper container-lg">  
 
   <Collapsible label="Add New Listing">
-
-    <div class="form-group">
-      <Input placeholder="Judul" block bind={title}/>
+    <div class="paper container-lg">
+      <div class="form-group">
+        <Input placeholder="Judul" block bind:value={title}/>
+      </div>
+      Listing : {title}
     </div>
-    Listing : {title}
-  
   </Collapsible>
   <Table {data} hoverable/>
 </div>  
