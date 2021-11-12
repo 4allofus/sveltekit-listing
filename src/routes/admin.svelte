@@ -2,10 +2,10 @@
       import 'papercss/dist/paper.min.css'
       import {Collapsible, Table, Input} from 'spaper';
       import 'papercss/dist/paper.min.css'
-      
+
       //import {Table} from 'spaper';
 
-      let title = '';
+      let title = "";
       let harga = 0;
       let satuan = '';
       let detil = '';
@@ -24,12 +24,12 @@
 <div class="paper container-lg">  
 
   <Collapsible label="Add New Listing">
-    <div class="paper container-lg">
+    
       <div class="form-group">
-        <Input placeholder="Judul" block bind:value={title}/>
+        <Input value="Block level" block />
       </div>
       Listing : {title}
-    </div>
+    
   </Collapsible>
   <Table {data} hoverable/>
 </div>  
