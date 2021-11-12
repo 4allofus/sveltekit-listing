@@ -1,6 +1,8 @@
 <script>
       import 'papercss/dist/paper.min.css'
       import {Collapsible, Table, Input} from 'spaper';
+      import 'papercss/dist/paper.min.css'
+      
       //import {Table} from 'spaper';
 
       let title = '';
