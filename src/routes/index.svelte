@@ -38,11 +38,13 @@
     $: items = posts.filter((post) => {
         return post.title.includes(searchWord) || post.body.includes(searchWord);
       });
+    
     //$: console.log(items)
 
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
 
+    $: console.log(paginatedItems)
 </script>
 
 <div class="paper container-lg">
