@@ -19,7 +19,7 @@ function toDarkFuncion(){
 </script>
 <nav class="fixed split-nav">
     <div class="nav-brand">
-      <h3><a sveltekit:prefetch href="/">Listing Bank</a></h3>
+      <h3><a sveltekit:prefetch href="listingbank.vercel.app">Listing Bank</a></h3>
     </div>
     <div class="collapsible">
       <input id="collapsible1" type="checkbox" name="collapsible1">
@@ -29,7 +29,7 @@ function toDarkFuncion(){
       </label>
       <div class="collapsible-body">
         <ul class="inline">
-          <li><a sveltekit:prefetch href="/">Home</a></li>
+          <li><a sveltekit:prefetch href="listingbank.vercel.applayout ">Home</a></li>
           <li><a sveltekit:prefetch href="listing">listing</a></li>
         </ul>
       </div>
