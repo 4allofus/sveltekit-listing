@@ -14,6 +14,20 @@
           detil: 'Lantai 7 view laut', kategori: 'apartmen' },
         
       ];
+
+      let propTitle = "Judul"
+      let propKeterangan = "Keterangan"
+      let propHarga = "Harga"
+      let propSatuan = "Satuan"
+      let propKategori = "Kategori"
+
+      let kategori = [
+		    'Apartment',
+		    'Rumah',
+		    'Ruko, Komersial, Gudang',
+        'Tanah'
+	    ];
+
 </script>
 
 <div class="paper container-lg">  
@@ -24,39 +38,38 @@
       </Button>
       <Modal bind:active={showModal} title="Add Property">
         <div class="form-group">
-          
+
           <div class="row">
             <div class="col sm-12">
-              <label for="paperInputs2">Title</label>
-              <input class="input-block" type="text" placeholder="Masukkan Judul">
+              <label for="paperInputs2">{propTitle}}</label>
+              <input class="input-block" type="text" placeholder="Masukkan Judul" bing:value={propTitle}>
             </div>
       
             <div>
-            <label for="large-input">Keterangan</label>
-            <textarea id="large-input" placeholder="Keterangan"></textarea>
+            <label for="large-input">{propKeterangan}}</label>
+            <textarea id="large-input" placeholder="Keterangan" bind:value={propKeterangan}></textarea>
             </div>
 
             <div>
-            <label for="paperInputs2">Harga</label>
-            <input class="input-block" type="text" placeholder="Masukkan Harga">
+            <label for="paperInputs2">{propHarga}</label>
+            <input class="input-block" type="text" placeholder="Masukkan Harga" bind:value={propHarga}>
             </div>
 
             <div>
-            <label for="paperSelects1">Satuan</label>
-            <select id="paperSelects1">
-              <option value="Jt">Juta</option>
-              <option value="M">Milliar</option>
+            <label for="paperSelects1">{propSatuan}</label>
+            <select bind:group={propSatuan}>
+              <option value={Jt}>Juta</option>
+              <option value={M}>Milliar</option>
             </select>
             </div>
 
             <div>
-            <legend>Kategori</legend>
-            <label for="paperChecks1" class="paper-check">
-              <input type="checkbox" name="paperChecks" value="Rumah"> <span>Rumah</span>
-            </label>
-            <label for="paperChecks2" class="paper-check">
-              <input type="checkbox" name="paperChecks" value="Komersial"> <span>Komersial</span>
-            </label>
+              {#each kategori as kategoriType}
+              <label>
+                <input type=checkbox bind:group={propKategori} value={kategoriType}>
+                {kategoriType}
+              </label>
+            {/each}
             </div>
 
           </div>
