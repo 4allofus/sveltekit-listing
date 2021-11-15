@@ -33,12 +33,11 @@
       items = posts.filter((post) => {
         return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
       });
-      searchWord = ""
     }
     
-    //$: items = posts.filter((post) => {
-    //  return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
-    //});
+    $: items = posts.filter((post) => {
+      return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
+    });
 
     $: console.log(items)
     //ready to paginate
