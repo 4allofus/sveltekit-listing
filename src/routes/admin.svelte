@@ -45,9 +45,7 @@
 
 </script>
 
-<Tabs>
-  <Tab label="Add Property">
-    
+    <div class="paper container-sm">  
             <div class="form-group">
               <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
               <Input type="textarea" placeholder="..." label="Deskripsi" bind:value={propKeterangan}/>
@@ -73,12 +71,8 @@
               <Checkbox label="Tanah" value="Tanah"
                         bind:group={propKategori} />
             </fieldset>         
-    
-  </Tab>
+    </div>
 
-  <Tab label="Tabel">
     <div class="paper container-lg">  
       <Table {data} hoverable/>
     </div>  
-  </Tab>
-</Tabs>
