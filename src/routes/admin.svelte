@@ -4,27 +4,22 @@
       
       import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore } from "firebase/firestore";
-      import {firebaseConfig} from "$lib/firebaseConfig";
-      import {browser} from "$app/env";
+      import { firebaseConfig } from "$lib/firebaseConfig";
+      import { browser } from "$app/env";
 
-      const firebaseApp = 
-        browser &&
-        (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+      const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
 
-      console.log(db);
-
-      let showModal = false;
-
-      let judul = "";
+      console.log({firebaseApp, db});
 
       let data = [
         { title: 'Rumah pik', harga: 5, satuan: 'M', 
-          detil: 'Jalan besar, hook', kategori: 'rumah' },
+        detil: 'Jalan besar, hook', kategori: 'rumah' },
         { title: 'Apartmen pik', harga: 700, satuan: 'Jt', 
-          detil: 'Lantai 7 view laut', kategori: 'apartmen' },
-        
+        detil: 'Lantai 7 view laut', kategori: 'apartmen' },        
       ];
+      
+      let showModal = false;
 
       let propTitle = "Judul"
       let propKeterangan = "Keterangan"
