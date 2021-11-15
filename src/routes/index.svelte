@@ -31,7 +31,7 @@
     
     function searchFunction(){
       items = items.filter((post) => {
-        return posts.title.includes(searchWord) || posts.body.includes(searchWord);
+        return post.title.includes(searchWord) || post.body.includes(searchWord);
       });
     }
     
