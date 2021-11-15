@@ -9,7 +9,7 @@
 
       const firebaseApp = 
         browser &&
-        (getApps().legnth === 0 ? initializeApp(firebaseConfig) : getApp());
+        (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
 
       console.log(db);
