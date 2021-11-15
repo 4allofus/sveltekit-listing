@@ -10,7 +10,9 @@
       const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
 
-      const colRef = collection(db, "posts");
+      console.log({firebaseApp, db});
+
+      const colRef = browser && collection(db, "posts");
 
       let propData = [];
 
@@ -23,8 +25,7 @@
             fbTodos = [todo, ...fbTodos];
           });
           console.table(fbTodos);
-        })
-      console.log({firebaseApp, db});
+        });
 
       let data = [
         { title: 'Rumah pik', harga: 5, satuan: 'M', 
