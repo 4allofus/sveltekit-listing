@@ -30,8 +30,8 @@
     let searchWord = "";
     
     function searchFunction(){
-      items = posts.filter((post) => {
-        return post.title.includes(searchWord) || post.body.includes(searchWord);
+      items = items.filter((post) => {
+        return posts.title.includes(searchWord) || posts.body.includes(searchWord);
       });
     }
     
