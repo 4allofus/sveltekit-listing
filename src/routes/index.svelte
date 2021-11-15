@@ -31,12 +31,12 @@
     
     function searchFunction(){
       items = posts.filter((post) => {
-        return post.title.includes(searchWord) || post.body.includes(searchWord);
+        return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
       });
     }
     
     $: items = posts.filter((post) => {
-      return post.title.includes(searchWord.toLowerCase) || post.body.includes(searchWord.toLowerCase);
+      return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
     });
 
     $: console.log(items)
