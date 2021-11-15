@@ -47,17 +47,12 @@
 
 <Tabs>
   <Tab label="Add Property">
-    <div class="paper container-lg">  
+    
             <div class="form-group">
-              <Input type="text" label="Judul" placeholder=".." bind:value={propTitle} block/>
-            </div>
+              <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
+              <Input type="textarea" placeholder="..." label="Deskripsi" bind:value={propKeterangan}/>
           
-            <div class="form-group">
-              <Input type="textarea" placeholder="..." label={propKeterangan} bind:value={propKeterangan}/>
-            </div>
-
-            <div class="form-group">
-              <Input label={propHarga} bind:value={propHarga}/>
+              <Input label="Harga" bind:value={propHarga}/>
 
               <Select label="Satuan" bind:value={propSatuan}>
                 <option value="Jt">Jt</option>
@@ -78,7 +73,7 @@
               <Checkbox label="Tanah" value="Tanah"
                         bind:group={propKategori} />
             </fieldset>         
-    </div>  
+    
   </Tab>
 
   <Tab label="Tabel">
