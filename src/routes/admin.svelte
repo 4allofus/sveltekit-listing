@@ -15,6 +15,12 @@
       const colRef = browser && collection(db, "posts");
 
       let propData = [];
+      let data = [
+        { title: 'Rumah pik', harga: 5, satuan: 'M', 
+        detil: 'Jalan besar, hook', kategori: 'rumah' },
+        { title: 'Apartmen pik', harga: 700, satuan: 'Jt', 
+        detil: 'Lantai 7 view laut', kategori: 'apartmen' },        
+      ];
 
       const unsubscribe = 
         browser &&
@@ -24,15 +30,10 @@
             let todo = {...doc.data(), id: doc.id};
             fbTodos = [todo, ...fbTodos];
           });
-          console.table(fbTodos);
+          //console.table(fbTodos);
+          data = fbTodos;
         });
 
-      let data = [
-        { title: 'Rumah pik', harga: 5, satuan: 'M', 
-        detil: 'Jalan besar, hook', kategori: 'rumah' },
-        { title: 'Apartmen pik', harga: 700, satuan: 'Jt', 
-        detil: 'Lantai 7 view laut', kategori: 'apartmen' },        
-      ];
       
       let showModal = false;
 
