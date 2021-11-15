@@ -18,30 +18,38 @@
 
 <div class="paper container-lg">  
   <div class="row flex-center">
-    <div class="sm-6 col">
+    <div class="sm-12 col">
       <Button on:click={() => showModal = true}>
         Add Property
       </Button>
       <Modal bind:active={showModal} title="Add Property">
         <div class="form-group">
+          
           <div class="row">
-            <div class="col sm-8">
+            <div class="col sm-12">
               <label for="paperInputs2">Title</label>
               <input class="input-block" type="text" placeholder="Masukkan Judul">
             </div>
       
+            <div>
             <label for="large-input">Keterangan</label>
             <textarea id="large-input" placeholder="Keterangan"></textarea>
-      
+            </div>
+
+            <div>
             <label for="paperInputs2">Harga</label>
             <input class="input-block" type="text" placeholder="Masukkan Harga">
-      
+            </div>
+
+            <div>
             <label for="paperSelects1">Satuan</label>
             <select id="paperSelects1">
               <option value="Jt">Juta</option>
               <option value="M">Milliar</option>
             </select>
-      
+            </div>
+
+            <div>
             <legend>Kategori</legend>
             <label for="paperChecks1" class="paper-check">
               <input type="checkbox" name="paperChecks" value="Rumah"> <span>Rumah</span>
@@ -49,6 +57,8 @@
             <label for="paperChecks2" class="paper-check">
               <input type="checkbox" name="paperChecks" value="Komersial"> <span>Komersial</span>
             </label>
+            </div>
+
           </div>
       </div>
       </Modal>
