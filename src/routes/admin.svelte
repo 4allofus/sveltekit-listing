@@ -48,10 +48,8 @@
 <Tabs>
   <Tab label="Add Property">
     <div class="paper container-lg">  
-      <div class="row flex-center">
-        <div class="sm-12 col">
             <div class="form-group">
-              <Input label={propTitle} bind:value={propTitle} block/>
+              <Input type="text" label="Judul" placeholder=".." bind:value={propTitle} block/>
             </div>
           
             <div class="form-group">
@@ -80,8 +78,6 @@
               <Checkbox label="Tanah" value="Tanah"
                         bind:group={propKategori} />
             </fieldset>         
-        </div>
-      </div>
     </div>  
   </Tab>
 
@@ -91,10 +87,3 @@
     </div>  
   </Tab>
 </Tabs>
-
-<style>
-.modal-body {
-    max-height: calc(100vh - 210px);
-    overflow-y: auto;
-}
-</style>
