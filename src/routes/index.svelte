@@ -35,7 +35,7 @@
     }
     
     $: items = posts.filter((post) => {
-        return post.title.includes(searchWord) 
+        return post.title.includes(searchWord);
       });
 
     $: console.log(items)
