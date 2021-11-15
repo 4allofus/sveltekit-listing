@@ -1,7 +1,18 @@
 <script>
       import 'papercss/dist/paper.min.css'
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox} from 'spaper';
-      import 'papercss/dist/paper.min.css'
+      
+      import { initializeApp, getApps, getApp } from "firebase/app";
+      import { getFirestore } from "firebase/firestore";
+      import {firebaseConfig} from "$lib/firebaseConfig";
+      import {browser} from "$app/env";
+
+      const firebaseApp = 
+        browser &&
+        (getApps().legnth === 0 ? initializeApp(firebaseConfig) : getApp());
+      const db = browser && getFirestore();
+
+      console.log(db);
 
       let showModal = false;
 

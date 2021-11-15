@@ -13,6 +13,7 @@
   },
   "type": "module",
   "dependencies": {
+    "firebase": "^9.4.1",
     "papercss": "^1.8.2",
     "spaper": "^0.1.2",
     "svelte-paginate": "^0.0.1"
