@@ -22,7 +22,6 @@
 
     import { paginate, LightPaginationNav } from 'svelte-paginate'
     
-    let items = posts
     let currentPage = 1
     let pageSize = 12
 
@@ -35,10 +34,14 @@
       });
     }
     
-    //$: console.log(items)
+    $: items = posts.filter((post) => {
+        return post.title.includes(searchWord) 
+      });
 
+    $: console.log(items)
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
+
 
 </script>
 

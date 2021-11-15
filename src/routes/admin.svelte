@@ -1,15 +1,11 @@
 <script>
       import 'papercss/dist/paper.min.css'
-      import {Collapsible, Table, Input} from 'spaper';
+      import {Collapsible, Table, Input, Modal} from 'spaper';
       import 'papercss/dist/paper.min.css'
 
-      //import {Table} from 'spaper';
+      let showModal = false;
 
-      let title = "";
-      let harga = 0;
-      let satuan = '';
-      let detil = '';
-      let kategori = '';
+      let judul = "";
 
       let data = [
         { title: 'Rumah pik', harga: 5, satuan: 'M', 
@@ -23,13 +19,14 @@
 
 <div class="paper container-lg">  
 
-  <Collapsible label="Add New Listing">
-    
-      <div class="form-group">
-        <Input value="Block level" block />
-      </div>
-      Listing 
-    
-  </Collapsible>
+  <Button on:click={() => showModal = true}>
+    Show
+  </Button>
+  <Modal bind:active={showModal}
+         title="Modal Title">
+    <p>Hey!</p>
+    <p>Here is the modal content</p>
+  </Modal>
+
   <Table {data} hoverable/>
 </div>  
