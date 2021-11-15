@@ -1,6 +1,6 @@
 <script>
       import 'papercss/dist/paper.min.css'
-      import {Collapsible, Table, Input, Modal} from 'spaper';
+      import {Collapsible, Table, Input, Modal, Button} from 'spaper';
       import 'papercss/dist/paper.min.css'
 
       let showModal = false;
