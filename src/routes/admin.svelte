@@ -51,7 +51,7 @@
       <Button on:click={() => showModal = true}>
         Add Property
       </Button>
-      <Modal bind:active={showModal} title="Add Property">
+      <Modal class="modal-body" bind:active={showModal} title="Add Property">
         <div class="form-group">
           <Input label={propTitle} bind:value={propTitle} block/>
         </div>
@@ -91,3 +91,11 @@
 
   <Table {data} hoverable/>
 </div>  
+
+
+<style>
+.modal-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+</style>
