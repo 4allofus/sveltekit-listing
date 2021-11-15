@@ -3,13 +3,27 @@
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox} from 'spaper';
       
       import { initializeApp, getApps, getApp } from "firebase/app";
-      import { getFirestore } from "firebase/firestore";
+      import { getFirestore, collection, query, where, onSnapshot } from "firebase/firestore";
       import { firebaseConfig } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
 
       const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
 
+      const colRef = collection(db, "posts");
+
+      let propData = [];
+
+      const unsubscribe = 
+        browser &&
+        onSnapshot(colRef, (querySnapshot) => {
+          let fbTodos = [];
+          querySnapshot.forEach((doc) => {
+            let todo = {...doc.data(), id: doc.id};
+            fbTodos = [todo, ...fbTodos];
+          });
+          console.table(fbTodos);
+        })
       console.log({firebaseApp, db});
 
       let data = [
