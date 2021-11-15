@@ -22,15 +22,15 @@
 
     import { paginate, LightPaginationNav } from 'svelte-paginate'
     
-    let items = posts
-    let currentPage = 1
-    let pageSize = 12
+    let items = posts;
+    let currentPage = 1;
+    let pageSize = 12;
 
     //untuk search
     let searchWord = "";
     
     function searchFunction(){
-      $: items = items.filter((post) => {
+      items = posts.filter((post) => {
         return post.title.includes(searchWord) || post.body.includes(searchWord);
       });
     }
