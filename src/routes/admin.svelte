@@ -50,39 +50,37 @@
         <div class="row flex-left">
           <div class="col-fill col">
             <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
-            <Input type="textarea" placeholder="..." label="Deskripsi" bind:value={propKeterangan}/>
           </div>
+          <div class="col-fill col">
+            <Input label="Deskripsi" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
+          </div>
+            <div class="sm-6 md-6 lg-6 col">
+              <Input label="Harga" bind:value={propHarga}/>
+            </div>
+            <div class="sm-6 md-6 lg-6 col">
+              <Select label="Satuan" bind:value={propSatuan}>
+                <option value="Jt">Jt</option>
+                <option value="M">M</option>
+              </Select>
+            </div>
+            <div class="sm-10 md-10 lg-10 col">
+              <fieldset class="form-group">
+                <p>Kategori</p>
+                <Checkbox label="Hot List" value="Hot List"
+                          bind:group={propKategori} />
+                <Checkbox label="Apartment" value="Apartment"
+                          bind:group={propKategori} />
+                <Checkbox label="Rumah" value="Rumah"
+                          bind:group={propKategori} />
+                <Checkbox label="Ruko, Komersial, Gudang" value="Ruko, Komersial, Gudang"
+                          bind:group={propKategori} />
+                <Checkbox label="Tanah" value="Tanah"
+                          bind:group={propKategori} />
+              </fieldset>         
+            </div>
         </div>  
           
-        <div class="row flex-left">
-          <div class="sm-6 md-6 lg-6 col">
-            <Input label="Harga" bind:value={propHarga}/>
-          </div>
-          <div class="sm-6 md-6 lg-6 col">
-            <Select label="Satuan" bind:value={propSatuan}>
-              <option value="Jt">Jt</option>
-              <option value="M">M</option>
-            </Select>
-          </div>
-        </div>
-
-        <div class="row flex-left">
-          <div class="sm-10 md-10 lg-10 col">
-            <fieldset class="form-group">
-              <p>Kategori</p>
-              <Checkbox label="Hot List" value="Hot List"
-                        bind:group={propKategori} />
-              <Checkbox label="Apartment" value="Apartment"
-                        bind:group={propKategori} />
-              <Checkbox label="Rumah" value="Rumah"
-                        bind:group={propKategori} />
-              <Checkbox label="Ruko, Komersial, Gudang" value="Ruko, Komersial, Gudang"
-                        bind:group={propKategori} />
-              <Checkbox label="Tanah" value="Tanah"
-                        bind:group={propKategori} />
-            </fieldset>         
-          </div>
-        </div>
+        
       </div>
     </div>
 
