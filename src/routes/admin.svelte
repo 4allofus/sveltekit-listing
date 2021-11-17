@@ -45,19 +45,29 @@
 
 </script>
 
-    <div class="paper container-sm">  
-            <div class="form-group">
-              <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
-              <Input type="textarea" placeholder="..." label="Deskripsi" bind:value={propKeterangan}/>
+<div class="paper container-md">
+      <div class="form-group">
+        <div class="row flex-left">
+          <div class="col-fill col">
+            <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
+            <Input type="textarea" placeholder="..." label="Deskripsi" bind:value={propKeterangan}/>
+          </div>
+        </div>  
           
-              <Input label="Harga" bind:value={propHarga}/>
+        <div class="row flex-left">
+          <div class="sm-6 md-6 lg-6 col">
+            <Input label="Harga" bind:value={propHarga}/>
+          </div>
+          <div class="sm-6 md-6 lg-6 col">
+            <Select label="Satuan" bind:value={propSatuan}>
+              <option value="Jt">Jt</option>
+              <option value="M">M</option>
+            </Select>
+          </div>
+        </div>
 
-              <Select label="Satuan" bind:value={propSatuan}>
-                <option value="Jt">Jt</option>
-                <option value="M">M</option>
-              </Select>
-            </div>
-
+        <div class="row flex-left">
+          <div class="sm-10 md-10 lg-10 col">
             <fieldset class="form-group">
               <p>Kategori</p>
               <Checkbox label="Hot List" value="Hot List"
@@ -71,6 +81,9 @@
               <Checkbox label="Tanah" value="Tanah"
                         bind:group={propKategori} />
             </fieldset>         
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="paper container-lg">  
