@@ -52,7 +52,7 @@
             <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
           </div>
           <div class="sm-12 md-12 lg-12 col">
-            <Input style="height: 40px" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
+            <Input style="height: 300px" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
           </div>
             <div class="sm-4 md-4 lg-4 col">
               <Input label="Harga" bind:value={propHarga}/>
