@@ -48,22 +48,22 @@
 <div class="paper container-md">
       <div class="form-group">
         <div class="row flex-left">
-          <div class="col-fill col">
+          <div class="sm-12 md-12 lg-12 col">
             <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
           </div>
-          <div class="col-fill col">
+          <div class="sm-12 md-12 lg-12 col">
             <Input label="Deskripsi" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
           </div>
-            <div class="sm-6 md-6 lg-6 col">
+            <div class="sm-4 md-4 lg-4 col">
               <Input label="Harga" bind:value={propHarga}/>
             </div>
-            <div class="sm-6 md-6 lg-6 col">
+            <div class="sm-3 md-3 lg-3 col">
               <Select label="Satuan" bind:value={propSatuan}>
                 <option value="Jt">Jt</option>
                 <option value="M">M</option>
               </Select>
             </div>
-            <div class="sm-10 md-10 lg-10 col">
+            <div class="sm-12 md-12 lg-12 col">
               <fieldset class="form-group">
                 <p>Kategori</p>
                 <Checkbox label="Hot List" value="Hot List"
