@@ -30,11 +30,11 @@
             let todo = {...doc.data(), id: doc.id};
             fbTodos = [todo, ...fbTodos];
           });
-          //console.table(fbTodos);
+          console.table(fbTodos);
           data = fbTodos;
         });
 
-      
+
       let showModal = false;
 
       let propTitle = "Judul"
