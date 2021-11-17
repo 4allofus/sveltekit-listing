@@ -40,7 +40,7 @@
       let propTitle = "Judul"
       let propKeterangan = "Keterangan"
       let propHarga = "Harga"
-      let propSatuan = "Satuan"
+      let propSatuan = "Milyar"
       let propKategori = "Kategori"
 
 </script>
@@ -54,13 +54,13 @@
           <div class="sm-12 md-12 lg-12 col">
             <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
           </div>
-            <div class="sm-4 md-4 lg-4 col">
+            <div class="sm-3 md-3 lg-3 col">
               <Input label="Harga" bind:value={propHarga}/>
             </div>
             <div class="sm-3 md-3 lg-3 col">
               <Select label="Satuan" bind:value={propSatuan}>
-                <option value="Jt">Jt</option>
-                <option value="M">M</option>
+                <option value="Juta">Juta</option>
+                <option value="Milyar">Milyar</option>
               </Select>
             </div>
             <div class="sm-12 md-12 lg-12 col">
