@@ -14,13 +14,7 @@
 
       const colRef = browser && collection(db, "posts");
 
-      let propData = [];
-      let data = [
-        { title: 'Rumah pik', harga: 5, satuan: 'M', 
-        detil: 'Jalan besar, hook', kategori: 'rumah' },
-        { title: 'Apartmen pik', harga: 700, satuan: 'Jt', 
-        detil: 'Lantai 7 view laut', kategori: 'apartmen' },        
-      ];
+      let data = [];
 
       const unsubscribe = 
         browser &&
@@ -33,9 +27,6 @@
           console.table(fbTodos);
           data = fbTodos;
         });
-
-
-      let showModal = false;
 
       let propTitle = "Judul"
       let propKeterangan = "Keterangan"
@@ -85,6 +76,12 @@
     </div>
 
     <div class="paper container-lg">  
-      <Table {data} hoverable/>
+      {#each data as propData }
+        <li>{propData.}</li>
+      {/each}
+    </div>  
+
+    <div class="paper container-lg">  
+      <Table {propData} hoverable/>
     </div>  
 
