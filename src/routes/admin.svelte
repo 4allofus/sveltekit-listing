@@ -77,7 +77,24 @@
 
     <div class="paper container-lg">  
       {#each data as propData }
-        <li>{propData}</li>
+      <div class="row flex-left">
+        <div class="sm-3 md-3 lg-3 col">
+          {propData.propTitle}
+        </div>
+        <div class="sm-5 md-5 lg-5 col">
+          {propData.propKeterangan}
+        </div>  
+        <div class="sm-1 md-1 lg-1 col">
+          {propData.propHarga}
+        </div>  
+        <div class="sm-1 md-1 lg-1 col">
+          {propData.propSatuan}
+        </div>  
+        <div class="sm-2 md-2 lg-2 col">
+          {propData.propKategori}
+        </div>  
+      </div>
+        
       {/each}
     </div>  
 
