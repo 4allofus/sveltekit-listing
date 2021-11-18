@@ -33,7 +33,11 @@
       let propHarga = 1
       let propSatuan = "Milyar"
       let propKategori = "..."
+      let propHotList = false
 
+        function submitForm() {
+          
+        }
 </script>
 
 <div class="paper container-md">
@@ -54,11 +58,15 @@
                 <option value="Milyar">Milyar</option>
               </Select>
             </div>
+            <div class="sm-3 md-3 lg-3 col">
+              <Select label="Hotlist" bind:value={propSatuan}>
+                <option value=true>true</option>
+                <option value=false>false</option>
+              </Select>
+            </div>
             <div class="sm-12 md-12 lg-12 col">
               <fieldset class="form-group">
                 <p>Kategori</p>
-                <Checkbox label="Hot List" value="Hot List"
-                          bind:group={propKategori} />
                 <Checkbox label="Apartment" value="Apartment"
                           bind:group={propKategori} />
                 <Checkbox label="Rumah" value="Rumah"
@@ -68,6 +76,9 @@
                 <Checkbox label="Tanah" value="Tanah"
                           bind:group={propKategori} />
               </fieldset>         
+            </div>
+            <div class="sm-3 md-3 lg-3 col">
+              <Button type="secondary" on:click={submitForm}>Submit</Button>
             </div>
         </div>  
           
