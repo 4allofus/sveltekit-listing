@@ -79,22 +79,21 @@
       {#each data as propData }
       <div class="row flex-left">
         <div class="sm-3 md-3 lg-3 col">
-          {propData.propTitle}
+          {propData.title}
         </div>
         <div class="sm-5 md-5 lg-5 col">
-          {propData.propKeterangan}
+          {propData.deskripsi}
         </div>  
         <div class="sm-1 md-1 lg-1 col">
-          {propData.propHarga}
+          {propData.harga}
         </div>  
         <div class="sm-1 md-1 lg-1 col">
-          {propData.propSatuan}
+          {propData.satuan}
         </div>  
         <div class="sm-2 md-2 lg-2 col">
-          {propData.propKategori}
+          {propData.kategori}
         </div>  
       </div>
-        
       {/each}
     </div>  
 
