@@ -77,11 +77,11 @@
 
     <div class="paper container-lg">  
       {#each data as propData }
-        <li>{propData.}</li>
+        <li>{propData}</li>
       {/each}
     </div>  
 
     <div class="paper container-lg">  
-      <Table {propData} hoverable/>
+      <Table {data} hoverable/>
     </div>  
 
