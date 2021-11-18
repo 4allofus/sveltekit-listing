@@ -28,11 +28,11 @@
           data = fbTodos;
         });
 
-      let propTitle = "Judul"
-      let propKeterangan = "Keterangan"
-      let propHarga = "Harga"
+      let propTitle = "..."
+      let propKeterangan = "..."
+      let propHarga = 1
       let propSatuan = "Milyar"
-      let propKategori = "Kategori"
+      let propKategori = "..."
 
 </script>
 
