@@ -98,6 +98,6 @@
     </div>  
 
     <div class="paper container-lg">  
-      <Table {data} hoverable/>
+      <Table columns={['title', 'deskripsi', 'harga', 'satuan', 'kategori', 'hotlist']}  {data} hoverable/>
     </div>  
 
