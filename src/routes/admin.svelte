@@ -44,7 +44,7 @@
               kategori: propKategori,
               hotlist: propHotList
           });
-          console.log(docRef.id);
+          //console.log(docRef.id);
        }
 </script>
 
@@ -89,28 +89,6 @@
         
       </div>
     </div>
-
-    <div class="paper container-lg">  
-      {#each data as propData }
-      <div class="row flex-left">
-        <div class="sm-3 md-3 lg-3 col">
-          {propData.title}
-        </div>
-        <div class="sm-5 md-5 lg-5 col">
-          {propData.deskripsi}
-        </div>  
-        <div class="sm-1 md-1 lg-1 col">
-          {propData.harga}
-        </div>  
-        <div class="sm-1 md-1 lg-1 col">
-          {propData.satuan}
-        </div>  
-        <div class="sm-2 md-2 lg-2 col">
-          {propData.kategori}
-        </div>  
-      </div>
-      {/each}
-    </div>  
 
     <div class="paper container-lg">  
       <Table columns={['title', 'deskripsi', 'harga', 'satuan', 'kategori', 'hotlist']}  {data} hoverable/>
