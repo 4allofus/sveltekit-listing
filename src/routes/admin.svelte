@@ -36,7 +36,7 @@
       let propHotList = false
 
       function submitForm() {
-          const docRef = await addDoc(colRef, {
+          const docRef = browser && await addDoc(colRef, {
               title: propTitle,
               deskripsi: propKeterangan,
               harga: propHarga,
