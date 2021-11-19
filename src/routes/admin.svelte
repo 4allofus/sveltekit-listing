@@ -57,35 +57,31 @@
           <div class="sm-12 md-12 lg-12 col">
             <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
           </div>
-            <div class="sm-3 md-3 lg-3 col">
+            <div class="sm-2 md-2 lg-2 col">
               <Input label="Harga" bind:value={propHarga}/>
             </div>
-            <div class="sm-3 md-3 lg-3 col">
+            <div class="sm-2 md-2 lg-2 col">
               <Select label="Satuan" bind:value={propSatuan}>
                 <option value="Juta">Juta</option>
                 <option value="Milyar">Milyar</option>
               </Select>
             </div>
-            <div class="sm-3 md-3 lg-3 col">
+            <div class="sm-2 md-2 lg-2 col">
               <Select label="Hotlist" bind:value={propHotList}>
                 <option value=true>true</option>
                 <option value=false>false</option>
               </Select>
             </div>
-            <div class="sm-12 md-12 lg-12 col">
-              <fieldset class="form-group">
+            <div class="sm-5 md-5 lg-5 col">
+              <Select label="Kategori" bind:value={propKategori}>
                 <p>Kategori</p>
-                <Checkbox label="Apartment" value="Apartment"
-                          bind:group={propKategori} />
-                <Checkbox label="Rumah" value="Rumah"
-                          bind:group={propKategori} />
-                <Checkbox label="Ruko, Komersial, Gudang" value="Ruko, Komersial, Gudang"
-                          bind:group={propKategori} />
-                <Checkbox label="Tanah" value="Tanah"
-                          bind:group={propKategori} />
-              </fieldset>         
+                <option value="Apartment"/>
+                <option value="Rumah"/>
+                <option value="Ruko, Komersial, Gudang"/>
+                <option value="Tanah"/>
+              </Select>         
             </div>
-            <div class="sm-3 md-3 lg-3 col">
+            <div class="sm-7 md-7 lg-7 col">
               <Button type="secondary" on:click={submitForm}>Submit</Button>
             </div>
         </div>  

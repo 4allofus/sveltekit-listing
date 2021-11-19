@@ -98,7 +98,7 @@
     <div class="row">
         {#if paginatedItems.length > 0}
           {#each paginatedItems as item}
-          <div class="sm-6 md-4 lg-3 col">
+          <div class="sm-5 md-4 lg-3 col">
             <Listing title={item.title} subtitle={item.title} body={item.body} web={'./blog/' + item.id}/>
           </div>
           {/each}
