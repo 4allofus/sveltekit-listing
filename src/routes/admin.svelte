@@ -46,6 +46,21 @@
           });
           //console.log(docRef.id);
        }
+
+       const columns1 = [
+          {
+            field: 'id',
+            label: 'Id',
+            content: (code) => `<Button type="danger" on:click={deleteForm}>delete</Button>`,
+            html: true,
+          },
+          { field: 'title', label: 'Title' },
+          { field: 'deskripsi', label: 'Deskripsi' },
+        ];
+
+        const deleteForm = async () => {
+          console.log("deleteForm")
+        }
 </script>
 
 <div class="paper container-md">
@@ -91,6 +106,9 @@
     </div>
 
     <div class="paper container-lg">  
-      <Table columns={['title', 'deskripsi', 'harga', 'satuan', 'kategori', 'hotlist']}  {data} hoverable/>
+      <Table {data} {columns1} hoverable/>
     </div>  
 
+    <div class="paper container-lg">  
+      <Table columns={['title', 'deskripsi', 'harga', 'satuan', 'kategori', 'hotlist']}  {data} hoverable/>
+    </div>
