@@ -35,8 +35,8 @@
       let propKategori = "..."
       let propHotList = false
 
-        function submitForm() {
-          const docRef = await addDoc(collection(db, "posts"), {
+      function submitForm() {
+          const docRef = await addDoc(colRef, {
               title: propTitle,
               deskripsi: propKeterangan,
               harga: propHarga,
@@ -45,7 +45,7 @@
               hotlist: propHotList
           });
           console.log(docRef.id);
-        }
+       }
 </script>
 
 <div class="paper container-md">
