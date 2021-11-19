@@ -35,8 +35,8 @@
       let propKategori = "..."
       let propHotList = false
 
-      function submitForm() {
-          const docRef = browser && await addDoc(colRef, {
+      const submitForm = async () => {
+          const docRef = await addDoc(colRef, {
               title: propTitle,
               deskripsi: propKeterangan,
               harga: propHarga,
