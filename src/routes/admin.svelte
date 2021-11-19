@@ -3,7 +3,7 @@
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
       import { initializeApp, getApps, getApp } from "firebase/app";
-      import { getFirestore, collection, query, where, onSnapshot } from "firebase/firestore";
+      import { getFirestore, collection, query, where, onSnapshot, addDoc } from "firebase/firestore";
       import { firebaseConfig } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
 
@@ -36,7 +36,15 @@
       let propHotList = false
 
         function submitForm() {
-          
+          const docRef = await addDoc(collection(db, "posts"), {
+              title: propTitle,
+              deskripsi: propKeterangan,
+              harga: propHarga,
+              satuan: propSatuan,
+              kategori: propKategori,
+              hotlist: propHotList
+          });
+          console.log(docRef.id);
         }
 </script>
 
