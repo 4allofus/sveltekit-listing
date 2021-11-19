@@ -75,10 +75,10 @@
             <div class="sm-5 md-5 lg-5 col">
               <Select label="Kategori" bind:value={propKategori}>
                 <p>Kategori</p>
-                <option value="Apartment"/>
-                <option value="Rumah"/>
-                <option value="Ruko, Komersial, Gudang"/>
-                <option value="Tanah"/>
+                <option value="Apartment">Apartment</option>
+                <option value="Rumah">Rumah</option>
+                <option value="Ruko, Komersial, Gudang">Ruko, Komersial, Gudang</option>
+                <option value="Tanah">Tanah</option>
               </Select>         
             </div>
             <div class="sm-7 md-7 lg-7 col">
