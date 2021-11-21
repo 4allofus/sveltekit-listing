@@ -6,6 +6,7 @@
       import { getFirestore, collection, query, where, onSnapshot, addDoc } from "firebase/firestore";
       import { firebaseConfig } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
+      import PropListing from './_propListing.svelte'
 
       const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
@@ -59,7 +60,7 @@
         ];
 
         const deleteForm = async () => {
-          console.log("deleteForm")
+          console.log("deleteFormk")
         }
 </script>
 
@@ -106,8 +107,20 @@
     </div>
 
     <div class="paper container-lg">  
-      <Table {data} {columns1} hoverable/>
-    </div>  
+      <div class="row">
+        {#each data as item}
+          <div class="sm-5 md-4 lg-3 col">
+            <propListing propTitle={item.title} 
+                          propKeterangan={item.deskripsi} 
+                          propKategori={item.kategori} 
+                          propHarga={item.harga}
+                          propSatuan={item.satuan}
+                          propHotList={item.hotList}
+                          web={'./blog/' + item.id}/>
+          </div>
+        {/each}
+      </div>  
+    </div>
 
     <div class="paper container-lg">  
       <Table columns={['title', 'deskripsi', 'harga', 'satuan', 'kategori', 'hotlist']}  {data} hoverable/>
