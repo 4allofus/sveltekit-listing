@@ -6,7 +6,7 @@
 </script>
 
 <div class="card">
-    <img src="https://picsum.photos/768" alt="Card example image">
+    <img src="https://picsum.photos/768" alt="image here">
   
     <div class="card-body">
       <h4 class="card-title">{title.substr(0,20)}</h4>
