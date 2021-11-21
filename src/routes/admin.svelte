@@ -40,7 +40,7 @@
                           propKategori={item.kategori} 
                           propHarga={item.harga}
                           propSatuan={item.satuan}
-                          propHotList={item.hotList}
+                          propHotlist={item.hotlist}
                           web={'./propBlog/' + item.id}/>
           </div>
         {/each}
