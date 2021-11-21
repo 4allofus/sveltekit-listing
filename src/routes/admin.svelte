@@ -116,7 +116,7 @@
                           propHarga={item.harga}
                           propSatuan={item.satuan}
                           propHotList={item.hotList}
-                          web={'./blog/' + item.id}/>
+                          web={'./propBlog/' + item.id}/>
           </div>
         {/each}
       </div>  
