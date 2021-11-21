@@ -13,11 +13,13 @@
     <img src="https://picsum.photos/768" alt="Card example image">
   
     <div class="card-body">
-        {#if propHotlist === true}
+        <!-- {#if propHotlist === true}
             <h4 class="card-title">🔥🔥🔥{propTitle}🔥🔥🔥</h4>
         {:else}
             <h4 class="card-title">{propTitle}</h4>
-        {/if}
+        {/if} -->
+
+        <h4 class="card-title">🔥🔥🔥{propTitle}🔥🔥🔥</h4>
 
       <h5 class="card-subtitle">{propHarga} {propSatuan}</h5>
       <p class="card-text">{propKategori}</p>
