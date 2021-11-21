@@ -10,7 +10,7 @@
 </script>
 
 <div class="card">
-    <img src="https://picsum.photos/768" alt="Card example image">
+    <img src={propImage} alt="Card example image">
   
     <div class="card-body">
         {#if propHotlist}
