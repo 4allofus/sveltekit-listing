@@ -7,6 +7,7 @@
       export let propKategori = "..."
       export let propHotList = false
       export let propImage = "http://kioskarikatur.files.wordpress.com/2009/02/diskon-30.jpg"
+      export let web = "empty";
       
 </script>
 

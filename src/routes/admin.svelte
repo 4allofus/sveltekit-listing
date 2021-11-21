@@ -6,7 +6,7 @@
       import { getFirestore, collection, query, where, onSnapshot, addDoc } from "firebase/firestore";
       import { firebaseConfig } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
-      import PropListing from './_propListing.svelte'
+      import Listing from './_propListing.svelte'
 
       const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
@@ -110,7 +110,7 @@
       <div class="row">
         {#each data as item}
           <div class="sm-5 md-4 lg-3 col">
-            <propListing propTitle={item.title} 
+            <Listing propTitle={item.title} 
                           propKeterangan={item.deskripsi} 
                           propKategori={item.kategori} 
                           propHarga={item.harga}
