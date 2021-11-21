@@ -110,12 +110,12 @@
       <div class="row">
         {#each data as item}
           <div class="sm-5 md-4 lg-3 col">
-            <Listing cardTitle={item.title} 
-                          cardKeterangan={item.deskripsi} 
-                          cardKategori={item.kategori} 
-                          cardHarga={item.harga}
-                          cardSatuan={item.satuan}
-                          cardHotList={item.hotList}
+            <Listing propTitle={item.title} 
+                          propKeterangan={item.deskripsi} 
+                          propKategori={item.kategori} 
+                          propHarga={item.harga}
+                          propSatuan={item.satuan}
+                          propHotList={item.hotList}
                           web={'./propBlog/' + item.id}/>
           </div>
         {/each}
