@@ -3,7 +3,9 @@
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
       import { initializeApp, getApps, getApp } from "firebase/app";
-      import { getFirestore, collection, query, where, onSnapshot, addDoc } from "firebase/firestore";
+      import { getFirestore, collection, 
+              query, where, onSnapshot, 
+              addDoc, doc, deleteDoc } from "firebase/firestore";
       import { firebaseConfig } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
       import Listing from './_propListing.svelte'
