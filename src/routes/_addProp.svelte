@@ -63,13 +63,13 @@
               <option value="Milyar">Milyar</option>
             </Select>
           </div>
-          <div class="sm-2 md-2 lg-2 col">
+          <div class="col-fill col">
             <Select label="Hotlist" bind:value={propHotList}>
               <option value=true>true</option>
               <option value=false>false</option>
             </Select>
           </div>
-          <div class="col-fill col">
+          <div class="sm-5 md-5 lg-5 col">
             <Select label="Kategori" bind:value={propKategori}>
               <p>Kategori</p>
               <option value="Apartment">Apartment</option>
