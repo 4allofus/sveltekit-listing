@@ -55,7 +55,7 @@
           <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
         </div>
           <div class="col-fill col">
-            <Input type=number label="Harga" min=0 max=1000 bind:value={propHarga}/>
+            <input type=number laberl="Harga" bind:value={propHarga} min=0 max=1000>
           </div>
           <div class="col-fill col">
             <Select label="Satuan" bind:value={propSatuan}>
