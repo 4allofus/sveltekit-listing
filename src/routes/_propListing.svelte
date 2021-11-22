@@ -7,6 +7,8 @@
       export let propHotlist = false;
       export let propImage = "http://kioskarikatur.files.wordpress.com/2009/02/diskon-30.jpg"
       export let web = "empty";
+      export let propId = "";
+      export let delProp;
 </script>
 
 <div class="card">
@@ -21,7 +23,8 @@
 
       <h5 class="card-subtitle">{propHarga} {propSatuan}</h5>
       <p class="card-text">{propKategori}</p>
-      <p class="card-text">{propKeterangan.substr(0,64)}</p>
-      <button><a sveltekit:prefetch href={web}>Info</a></button>
+      <p class="card-text">{propKeterangan}</p>
+      <button><a sveltekit:prefetch href={web}>Edit</a></button>
+      <button on:click={delProp({propId})}>Delete</button>
     </div>
 </div>

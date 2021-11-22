@@ -29,6 +29,9 @@
           data = fbTodos;
         });
 
+      const delProp = async (no) => {
+          console.log("delProp" + no)
+      }
 </script>
 
     <div class="paper container-lg">  
@@ -41,7 +44,9 @@
                           propHarga={item.harga}
                           propSatuan={item.satuan}
                           propHotlist={item.hotlist}
-                          web={'./propBlog/' + item.id}/>
+                          web={'./propBlog/' + item.id}
+                          propId={item.id}
+                          delProp={delProp}/>
           </div>
         {/each}
       </div>  
