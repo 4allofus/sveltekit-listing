@@ -64,7 +64,7 @@
             </Select>
           </div>
           <div class="col-fill col">
-            <Select label="Hotlist" bind:value={propHotList}>
+            <Select type="boolean" label="Hotlist" bind:value={propHotList}>
               <option value=true>true</option>
               <option value=false>false</option>
             </Select>
