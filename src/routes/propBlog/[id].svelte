@@ -1,7 +1,18 @@
 <script context="module">
-   export async function load({ page }) {
+    export const load = async ({ page, fetch }) =>{
         const id = page.params.id;
-        console.log(page.params.id);
+        console.log(id);
+
+        const myPath = "https://jsonplaceholder.typicode.com/posts/50";
+        //console.log(myPath);
+
+      const res = await fetch(myPath);
+      const post = await res.json();
+      return{
+        props: {
+          post,
+        },
+      };
     };
 </script>
 
