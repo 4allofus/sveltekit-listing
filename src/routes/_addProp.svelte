@@ -64,7 +64,7 @@
             </Select>
           </div>
           <div class="col-fill col">
-            <Checkbox label="Hotlist" value="hotlist ?"
+            <Checkbox label="hotlist?" value="hotlist ?"
             bind:checked={propHotList} />
           </div>
           <div class="col-fill col">
