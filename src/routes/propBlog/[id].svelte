@@ -1,3 +1,9 @@
+<script context="module">
+      const id = page.params.id;
+
+      console.log(page.params)
+</script>
+
 <script>
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
@@ -21,7 +27,7 @@
     let propKategori = "..."
     let propHotList = false
 
-    const submitForm = async () => {
+    const updateForm = async () => {
         const docRef = await addDoc(colRef, {
             title: propTitle,
             deskripsi: propKeterangan,
@@ -30,7 +36,7 @@
             kategori: propKategori,
             hotlist: propHotList
         }); 
-        console.log("SubmitForm");
+        console.log("updateForm");
      }
 
 </script>
@@ -44,32 +50,30 @@
         <div class="sm-12 md-12 lg-12 col">
           <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
         </div>
-          <div class="sm-4 md-4 lg-4 col">
-            <Input label="Harga" bind:value={propHarga}/>
-          </div>
-          <div class="sm-1 md-1 lg-1 col">
-            <Select label="Satuan" bind:value={propSatuan}>
-              <option value="Juta">Juta</option>
-              <option value="Milyar">Milyar</option>
-            </Select>
-          </div>
-          <div class="sm-2 md-2 lg-2 col">
-            <Select label="Hotlist" bind:value={propHotList}>
-              <option value=true>true</option>
-              <option value=false>false</option>
-            </Select>
-          </div>
-          <div class="sm-5 md-5 lg-5 col">
-            <Select label="Kategori" bind:value={propKategori}>
-              <p>Kategori</p>
-              <option value="Apartment">Apartment</option>
-              <option value="Rumah">Rumah</option>
-              <option value="Ruko, Komersial, Gudang">Ruko, Komersial, Gudang</option>
-              <option value="Tanah">Tanah</option>
-            </Select>         
-          </div>
+        <div class="col-fill col">
+          <input type=number laberl="Harga" bind:value={propHarga} min=0 max=1000>
+        </div>
+        <div class="col-fill col">
+          <Select label="Satuan" bind:value={propSatuan}>
+            <option value="Juta">Juta</option>
+            <option value="Milyar">Milyar</option>
+          </Select>
+        </div>
+        <div class="col-fill col">
+          <Checkbox label="hotlist?" value="hotlist ?"
+          bind:checked={propHotList} />
+        </div>
+        <div class="col-fill col">
+          <Select label="Kategori" bind:value={propKategori}>
+            <p>Kategori</p>
+            <option value="Apartment">Apartment</option>
+            <option value="Rumah">Rumah</option>
+            <option value="Ruko, Komersial, Gudang">Ruko, Komersial, Gudang</option>
+            <option value="Tanah">Tanah</option>
+          </Select>         
+        </div>
           <div class="sm-7 md-7 lg-7 col">
-            <Button type="secondary" on:click={submitForm}>Submit</Button>
+            <Button type="secondary" on:click={updateForm}>Update</Button>
           </div>
       </div>  
         

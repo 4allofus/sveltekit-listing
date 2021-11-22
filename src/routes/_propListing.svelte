@@ -16,7 +16,7 @@
   
     <div class="card-body">
         {#if propHotlist}
-            <h4 class="card-title">🔥🔥🔥{propTitle}🔥🔥🔥</h4>
+            <h4 class="card-title">🔥{propTitle}🔥</h4>
         {:else}
             <h4 class="card-title">{propTitle}</h4>
         {/if}
