@@ -16,21 +16,31 @@
 
     let propTitle = "..."
     let propKeterangan = "..."
-    let propHarga = 1
+    let propHarga = 0
     let propSatuan = "Milyar"
     let propKategori = "..."
     let propHotList = false
 
     const submitForm = async () => {
-        const docRef = await addDoc(colRef, {
-            title: propTitle,
-            deskripsi: propKeterangan,
-            harga: propHarga,
-            satuan: propSatuan,
-            kategori: propKategori,
-            hotlist: propHotList
-        }); 
-        console.log("SubmitForm");
+        if(propHarga > 0){
+            const docRef = await addDoc(colRef, {
+                title: propTitle,
+                deskripsi: propKeterangan,
+                harga: propHarga,
+                satuan: propSatuan,
+                kategori: propKategori,
+                hotlist: propHotList
+            }); 
+        }
+
+        propTitle = "..."
+        propKeterangan = "..."
+        propHarga = 0
+        propSatuan = "Milyar"
+        propKategori = "..."
+        propHotList = false
+        
+        //console.log("SubmitForm");
      }
 
 </script>
@@ -47,7 +57,7 @@
           <div class="sm-4 md-4 lg-4 col">
             <Input label="Harga" bind:value={propHarga}/>
           </div>
-          <div class="sm-1 md-1 lg-1 col">
+          <div class="sm-2 md-2 lg-2 col">
             <Select label="Satuan" bind:value={propSatuan}>
               <option value="Juta">Juta</option>
               <option value="Milyar">Milyar</option>
@@ -59,7 +69,7 @@
               <option value=false>false</option>
             </Select>
           </div>
-          <div class="sm-5 md-5 lg-5 col">
+          <div class="col-fill col">
             <Select label="Kategori" bind:value={propKategori}>
               <p>Kategori</p>
               <option value="Apartment">Apartment</option>
