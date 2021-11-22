@@ -8,7 +8,9 @@
               addDoc, doc, deleteDoc } from "firebase/firestore";
       import { firebaseConfig } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
+
       import Listing from './_propListing.svelte'
+      import AddProp from './_addProp.svelte'
 
       const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
@@ -18,6 +20,7 @@
       const colRef = browser && collection(db, "posts");
 
       let data = [];
+      let isAdmin = true;
 
       const unsubscribe = 
         browser &&
@@ -35,9 +38,17 @@
           console.log("delProp" + no)
           await deleteDoc(doc(db, "posts", no));
       }
+
 </script>
 
-    <div class="paper container-lg">  
+{#if isAdmin}
+    <div class="paper continer-lg">
+	      <AddProp/>
+    </div>
+{/if}
+
+  
+<div class="paper container-lg">  
       <div class="row">
         {#each data as item}
           <div class="sm-5 md-4 lg-3 col">

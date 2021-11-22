@@ -26,16 +26,18 @@ function toDarkFuncion(){
       <label for="collapsible1">
         <div class="bar1"></div>
         <div class="bar2"></div>
+        <div class="bar3"></div>
       </label>
       <div class="collapsible-body">
         <ul class="inline">
           <li><a sveltekit:prefetch href="\">Home</a></li>
+          <li><a sveltekit:prefetch href="admin">Admin</a></li>
           <li><a sveltekit:prefetch href="listing">listing</a></li>
         </ul>
       </div>
     </div>
   </nav>
   
-<html class="{toDark}">
+<html lang="en" class="{toDark}">
   <slot></slot>
 </html>
