@@ -1,7 +1,7 @@
 <script context="module">
-    export const load = async ({ page}) =>{
+   export async function load({ page }) {
         const id = page.params.id;
-        console.log(page.params);
+        console.log(page.params.id);
     };
 </script>
 
