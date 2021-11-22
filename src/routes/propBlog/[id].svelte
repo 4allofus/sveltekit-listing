@@ -1,7 +1,8 @@
 <script context="module">
-      const id = page.params.id;
-
-      console.log(page.params)
+    export const load = async ({ page}) =>{
+        const id = page.params.id;
+        console.log(page.params);
+    };
 </script>
 
 <script>
