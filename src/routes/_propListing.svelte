@@ -5,7 +5,7 @@
       export let propSatuan = "Milyar";
       export let propKategori = "...";
       export let propHotlist = false;
-      export let propImage = "http://kioskarikatur.files.wordpress.com/2009/02/diskon-30.jpg"
+      export let propImage = "gs://allofussvelte.appspot.com/30%_.jpg"
       export let web = "empty";
       export let propId;
       export let delProp;

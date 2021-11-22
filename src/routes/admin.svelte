@@ -31,6 +31,7 @@
 
       const delProp = async (no) => {
           console.log("delProp" + no)
+          await deleteDoc(doc(db, "posts", no));
       }
 </script>
 
