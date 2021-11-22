@@ -51,13 +51,13 @@
         <div class="sm-12 md-12 lg-12 col">
           <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
         </div>
-        <div class="col-fill col">
+        <div class="sm-12 md-12 lg-12 col">
           <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
         </div>
-          <div class="sm-4 md-4 lg-4 col">
+          <div class="col-fill col">
             <Input type="number" label="Harga" bind:value={propHarga}/>
           </div>
-          <div class="sm-2 md-2 lg-2 col">
+          <div class="col-fill col">
             <Select label="Satuan" bind:value={propSatuan}>
               <option value="Juta">Juta</option>
               <option value="Milyar">Milyar</option>
@@ -67,7 +67,7 @@
             <Checkbox label="Hotlist" value="hotlist ?"
             bind:checked={propHotList} />
           </div>
-          <div class="sm-5 md-5 lg-5 col">
+          <div class="col-fill col">
             <Select label="Kategori" bind:value={propKategori}>
               <p>Kategori</p>
               <option value="Apartment">Apartment</option>
