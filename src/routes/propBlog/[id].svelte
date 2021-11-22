@@ -1,16 +1,11 @@
 <script context="module">
-    export const load = async ({ page, fetch }) =>{
+    export const load = async ({ page }) =>{
         const id = page.params.id;
         console.log(id);
 
-        const myPath = "https://jsonplaceholder.typicode.com/posts/50";
-        //console.log(myPath);
-
-      const res = await fetch(myPath);
-      const post = await res.json();
       return{
         props: {
-          post,
+          
         },
       };
     };
