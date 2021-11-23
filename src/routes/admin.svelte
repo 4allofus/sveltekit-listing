@@ -23,20 +23,18 @@
         let isAdmin = true;
         
         const auth = getAuth();
-        onAuthStateChanged(auth, (user) => {
-          if (user) {
+        const user = auth.currentUser;
+
+        if (user) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
-          const uid = user.uid;
-          console.log(uid);
+          // ...
+          console.log(user.uid)
           isAdmin = true;
-          // ...
-          } else {
-          // User is signed out
-          // ...
+        } else {
+          // No user is signed in.
           isAdmin = false;
-          }
-        });
+        }
 
       const unsubscribe = 
         browser &&
