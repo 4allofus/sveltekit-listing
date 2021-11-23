@@ -27,7 +27,7 @@
     const db = browser && getFirestore();
 
     //const colRef = browser && collection(db, "posts");
-    const docRef = browser && doc(db, "posts", id.toString());
+    const docRef = browser && doc(db, "posts", "xC3NfGz1K2eypzLj7TJQ");
     const docSnap = browser && getDoc(docRef);
 
     if (docSnap) {
@@ -39,7 +39,7 @@
 
     //console.log();
 
-    let propTitle = "..."
+    let propTitle = id
     let propKeterangan = "..."
     let propHarga = 0
     let propSatuan = "..."
