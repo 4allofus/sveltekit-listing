@@ -10,7 +10,7 @@
       export let propId;
       export let delProp;
 
-      import { isAdmin }  from '../stores/adminStore.js';
+      import { isAdmin }  from "$lib/adminStore";
 </script>
 
 <div class="card">

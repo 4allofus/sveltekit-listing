@@ -13,7 +13,7 @@
         
         import Listing from './_propListing.svelte'
         import AddProp from './_addProp.svelte'
-        import { isAdmin }  from '../stores/adminStore.js';
+        import { isAdmin }  from "$lib/adminStore";
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
         const db = browser && getFirestore();
