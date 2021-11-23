@@ -41,6 +41,8 @@
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
+    import { isAdmin } from './adminStore.js';
+
     //import { initializeApp, getApps, getApp } from "firebase/app";
     /* import { getFirestore, collection, 
               query, where, onSnapshot, 
@@ -48,13 +50,6 @@
             getDoc} from "firebase/firestore"; */
     //import { firebaseConfig } from "$lib/firebaseConfig";
     //import { browser } from "$app/env";
-
-    /* let propTitle = docSnap.title
-    let propKeterangan = "..."
-    let propHarga = 0
-    let propSatuan = "..."
-    let propKategori = "..."
-    let propHotList = false */
 
     let propTitle = post.title
     let propKeterangan = post.deskripsi
@@ -75,6 +70,8 @@
         console.log("updateForm");
      }
 
+     if(!isAdmin)
+        window.history.back();
 </script>
 
 <div class="paper container-md">
