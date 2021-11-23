@@ -31,15 +31,15 @@
 
     console.log(q);
 
-    let propTitle = id
-    let propKeterangan = "..."
-    let propHarga = 1
-    let propSatuan = "Milyar"
-    let propKategori = "..."
-    let propHotList = false
+    let propTitle = q.title
+    let propKeterangan = q.deskripsi
+    let propHarga = q.harga
+    let propSatuan = q.satuan
+    let propKategori = q.kategori
+    let propHotList = q.hotlist
 
     const updateForm = async () => {
-        const docRef = await addDoc(colRef, {
+        const docRef = await setDoc(doc(db, "posts", q.id), {
             title: propTitle,
             deskripsi: propKeterangan,
             harga: propHarga,
@@ -87,8 +87,6 @@
             <Button type="secondary" on:click={updateForm}>Update</Button>
           </div>
       </div>  
-        
-      
     </div>
   </div>
 
