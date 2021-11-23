@@ -27,9 +27,9 @@
       <p class="card-text">{propKategori}</p>
       <p class="card-text">{propKeterangan}</p>
 
-      (#if isSignedIn)
+      {#if isSignedIn}
         <button><a sveltekit:prefetch href={web}>Edit</a></button>
         <button on:click={delProp(propId)}>Delete</button>
-       (/if)
+       {/if}
     </div>
 </div>

@@ -6,6 +6,8 @@
             getDoc, setDoc} from "firebase/firestore";
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
+    import { isSignedIn }  from "$lib/adminStore";
+
 
     export const load = async ({ page }) =>{
         const id = page.params.id;
@@ -19,12 +21,12 @@
 
         const post = docSnap.data();
 
-        if (docSnap.exists()) {
+        /* if (docSnap.exists()) {
           console.log("Document data:", docSnap.data());
         } else {
           // doc.data() will be undefined in this case
           console.log("No such document!");
-        }
+        }*/
 
       return{
         props: {
@@ -57,6 +59,7 @@
     let propHotList = post.hotlist
 
     const updateForm = async () => {
+      if(isSignedIn){
         const docRef = await setDoc(doc(db, "posts", id), {
             title: propTitle,
             deskripsi: propKeterangan,
@@ -64,8 +67,9 @@
             satuan: propSatuan,
             kategori: propKategori,
             hotlist: propHotList
-        }); 
-        console.log("updateForm");
+        });
+        } 
+        //console.log("updateForm");
      }
 
 </script>
