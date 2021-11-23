@@ -33,7 +33,7 @@
               const user = result.user;
               console.log(user.uid);
               if(user.uid == "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-                isSignedIn = true;
+                $isSignedIn = true;
               }
             }).catch((error) => {
               // Handle Errors here.
@@ -65,7 +65,7 @@
 
 </script>
 
-{#if isSignedIn}
+{#if true}
     <div class="paper continer-lg">
 	      <AddProp/>
     </div>
