@@ -37,15 +37,15 @@
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
-    import { initializeApp, getApps, getApp } from "firebase/app";
+    //import { initializeApp, getApps, getApp } from "firebase/app";
     import { getFirestore, collection, 
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc,
             getDoc} from "firebase/firestore";
-    import { firebaseConfig } from "$lib/firebaseConfig";
-    import { browser } from "$app/env";
+    //import { firebaseConfig } from "$lib/firebaseConfig";
+    //import { browser } from "$app/env";
 
-    let propTitle = "..."
+    let propTitle = docSnap.title
     let propKeterangan = "..."
     let propHarga = 0
     let propSatuan = "..."
@@ -60,7 +60,7 @@
     let propHotList = docSnap.hotlist */
 
     const updateForm = async () => {
-        const docRef = await setDoc(doc(db, "posts", "post.id"), {
+        const docRef = await setDoc(doc(db, "posts", "aaaa"), {
             title: propTitle,
             deskripsi: propKeterangan,
             harga: propHarga,
