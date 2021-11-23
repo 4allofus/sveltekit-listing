@@ -2,23 +2,41 @@
       import 'papercss/dist/paper.min.css'
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
+      import { getAuth, onAuthStateChanged } from "firebase/auth";
+      
       import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore, collection, 
-              query, where, onSnapshot, 
-              addDoc, doc, deleteDoc } from "firebase/firestore";
-      import { firebaseConfig } from "$lib/firebaseConfig";
-      import { browser } from "$app/env";
-
-      import Listing from './_propListing.svelte'
-      import AddProp from './_addProp.svelte'
-
-      const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-      const db = browser && getFirestore();
-
-      const colRef = browser && collection(db, "posts");
-
-      let data = [];
-      let isAdmin = true;
+        query, where, onSnapshot, 
+        addDoc, doc, deleteDoc } from "firebase/firestore";
+        import { firebaseConfig } from "$lib/firebaseConfig";
+        import { browser } from "$app/env";
+        
+        import Listing from './_propListing.svelte'
+        import AddProp from './_addProp.svelte'
+        
+        const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+        const db = browser && getFirestore();
+        
+        const colRef = browser && collection(db, "posts");
+        
+        let data = [];
+        let isAdmin = true;
+        
+        const auth = getAuth();
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+          // User is signed in, see docs for a list of available properties
+          // https://firebase.google.com/docs/reference/js/firebase.User
+          const uid = user.uid;
+          console.log(uid);
+          isAdmin = true;
+          // ...
+          } else {
+          // User is signed out
+          // ...
+          isAdmin = false;
+          }
+        });
 
       const unsubscribe = 
         browser &&
