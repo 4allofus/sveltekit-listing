@@ -10,7 +10,7 @@
       export let propId;
       export let delProp;
 
-      import { isAdmin } from './adminStore.js';
+      import { isAdmin }  from '../stores/adminStore.js';
 </script>
 
 <div class="card">
@@ -31,6 +31,6 @@
         <button><a sveltekit:prefetch href={web}>Edit</a></button>
         <button on:click={delProp(propId)}>Delete</button>
       {/if}
-      
+
     </div>
 </div>
