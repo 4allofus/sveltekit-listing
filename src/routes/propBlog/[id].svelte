@@ -3,7 +3,7 @@
     import { getFirestore, collection, 
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc,
-            getDoc} from "firebase/firestore";
+            getDoc, setDoc} from "firebase/firestore";
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
 
