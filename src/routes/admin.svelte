@@ -11,8 +11,8 @@
         import { firebaseConfig } from "$lib/firebaseConfig";
         import { browser } from "$app/env";
         
-        import Listing from './_propListing.svelte'
-        import AddProp from './_addProp.svelte'
+        import Listing from './_propListing.svelte';
+        import AddProp from './_addProp.svelte';
         import { isSignedIn }  from "$lib/adminStore";
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
