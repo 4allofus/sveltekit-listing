@@ -9,6 +9,8 @@
       export let web = "empty";
       export let propId;
       export let delProp;
+
+      import { isAdmin } from './adminStore.js';
 </script>
 
 <div class="card">
@@ -24,7 +26,11 @@
       <h5 class="card-subtitle">{propHarga} {propSatuan}</h5>
       <p class="card-text">{propKategori}</p>
       <p class="card-text">{propKeterangan}</p>
-      <button><a sveltekit:prefetch href={web}>Edit</a></button>
-      <button on:click={delProp(propId)}>Delete</button>
+
+      {#if isAdmin}
+        <button><a sveltekit:prefetch href={web}>Edit</a></button>
+        <button on:click={delProp(propId)}>Delete</button>
+      {/if}
+      
     </div>
 </div>

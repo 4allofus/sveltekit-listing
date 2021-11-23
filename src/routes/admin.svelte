@@ -13,6 +13,7 @@
         
         import Listing from './_propListing.svelte'
         import AddProp from './_addProp.svelte'
+        import { isAdmin } from './adminStore.js';
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
         const db = browser && getFirestore();
@@ -20,7 +21,6 @@
         const colRef = browser && collection(db, "posts");
         
         let data = [];
-        let isAdmin = true;
         
         const provider = new GoogleAuthProvider();;
         const auth = getAuth();
@@ -32,6 +32,9 @@
               // The signed-in user info.
               const user = result.user;
               console.log(user.uid);
+              if(user.uid == "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
+                isAdmin = true;
+              }
             }).catch((error) => {
               // Handle Errors here.
               const errorCode = error.code;
@@ -68,7 +71,6 @@
     </div>
 {/if}
 
-  
 <div class="paper container-lg">  
       <div class="row">
         {#each data as item}
