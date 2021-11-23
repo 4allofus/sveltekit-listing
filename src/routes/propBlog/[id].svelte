@@ -26,7 +26,7 @@
 
       return{
         props: {
-          docSnap,
+          id, docSnap, db,
         },
       };
     };
@@ -34,6 +34,8 @@
 
 <script>
     export let docSnap;
+    export let db;
+    export let id;
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
@@ -45,22 +47,22 @@
     //import { firebaseConfig } from "$lib/firebaseConfig";
     //import { browser } from "$app/env";
 
-    let propTitle = docSnap.title
+    /* let propTitle = docSnap.title
     let propKeterangan = "..."
     let propHarga = 0
     let propSatuan = "..."
     let propKategori = "..."
-    let propHotList = false
+    let propHotList = false */
 
-    /* let propTitle = docSnap.title
+    let propTitle = docSnap.title
     let propKeterangan = docSnap.deskripsi
     let propHarga = docSnap.harga
     let propSatuan = docSnap.satuan
     let propKategori = docSnap.kategori
-    let propHotList = docSnap.hotlist */
+    let propHotList = docSnap.hotlist
 
     const updateForm = async () => {
-        const docRef = await setDoc(doc(db, "posts", "aaaa"), {
+        const docRef = await setDoc(doc(db, "posts", id), {
             title: propTitle,
             deskripsi: propKeterangan,
             harga: propHarga,
@@ -77,13 +79,13 @@
     <div class="form-group">
       <div class="row flex-left">
         <div class="sm-12 md-12 lg-12 col">
-          <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
+          <Input label="Judul" placeholder={propTitle} bind:value={propTitle} block/>
         </div>
         <div class="sm-12 md-12 lg-12 col">
-          <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
+          <Input rows="8" type="textarea" placeholder={propKeterangan} bind:value={propKeterangan} block/>
         </div>
         <div class="col-fill col">
-          <input type=number laberl="Harga" bind:value={propHarga} min=0 max=1000>
+          <input type=number label="Harga" bind:value={propHarga} min=0 max=1000>
         </div>
         <div class="col-fill col">
           <Select label="Satuan" bind:value={propSatuan}>
