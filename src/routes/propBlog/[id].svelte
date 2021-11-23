@@ -1,17 +1,39 @@
 <script context="module">
+    import { initializeApp, getApps, getApp } from "firebase/app";
+    import { getFirestore, collection, 
+              query, where, onSnapshot, 
+              addDoc, doc, deleteDoc,
+            getDoc} from "firebase/firestore";
+    import { firebaseConfig } from "$lib/firebaseConfig";
+    import { browser } from "$app/env";
+
     export const load = async ({ page }) =>{
         const id = page.params.id;
 
+        const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+        const db = browser && getFirestore();
+
+        //const colRef = browser && collection(db, "posts");
+        const q = query(collection(db, "posts"), where("id", "==", id));
+        let post
+
+        const querySnapshot = await getDocs(q);
+          querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          console.log(doc.id, " => ", doc.data());
+          post = data;
+        });
+
       return{
         props: {
-          id,
+          post,
         },
       };
     };
 </script>
 
 <script>
-    export let id;
+    export let post;
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
@@ -23,23 +45,7 @@
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
 
-    const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-    const db = browser && getFirestore();
-
-    //const colRef = browser && collection(db, "posts");
-    const docRef = browser && doc(db, "posts", "xC3NfGz1K2eypzLj7TJQ");
-    const docSnap = browser && getDoc(docRef);
-
-    if (docSnap) {
-      console.log("Document data:", docSnap.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log("No such document!");
-    }
-
-    //console.log();
-
-    let propTitle = id
+    let propTitle = post.id
     let propKeterangan = "..."
     let propHarga = 0
     let propSatuan = "..."
@@ -54,7 +60,7 @@
     let propHotList = docSnap.hotlist */
 
     const updateForm = async () => {
-        const docRef = await setDoc(doc(db, "posts", id), {
+        const docRef = await setDoc(doc(db, "posts", post.id), {
             title: propTitle,
             deskripsi: propKeterangan,
             harga: propHarga,
