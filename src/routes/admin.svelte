@@ -25,7 +25,7 @@
         const auth = getAuth();
         const user = auth.currentUser;
 
-        if (user) {
+        if (user != nll) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           // ...
@@ -33,6 +33,7 @@
           isAdmin = true;
         } else {
           // No user is signed in.
+          console.log("user signed out")
           isAdmin = false;
         }
 
