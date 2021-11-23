@@ -14,27 +14,26 @@
         const db = browser && getFirestore();
 
         //const colRef = browser && collection(db, "posts");
-        const q = query(collection(db, "posts"), where("id", "==", id));
+        const docRef = doc(db, "posts", id);
+        const docSnap = await getDoc(docRef);
 
-        const post = "";
-
-        const querySnapshot = await getDocs(q);
-          querySnapshot.forEach((doc) => {
-          // doc.data() is never undefined for query doc snapshots
-          console.log(doc.id, " => ", doc.data());
-         
-        });
+        if (docSnap.exists()) {
+          console.log("Document data:", docSnap.data());
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
 
       return{
         props: {
-          post,
+          docSnap,
         },
       };
     };
 </script>
 
 <script>
-    export let post;
+    export let docSnap;
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
