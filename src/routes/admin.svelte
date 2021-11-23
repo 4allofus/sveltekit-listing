@@ -15,8 +15,6 @@
       const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
       const db = browser && getFirestore();
 
-      console.log({firebaseApp, db});
-
       const colRef = browser && collection(db, "posts");
 
       let data = [];
