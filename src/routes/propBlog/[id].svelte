@@ -1,7 +1,7 @@
 <script context="module">
     export const load = async ({ page }) =>{
         const id = page.params.id;
-        console.log(id);
+        console.log(page.params);
 
       return{
         props: {
@@ -26,8 +26,11 @@
     const db = browser && getFirestore();
 
     const colRef = browser && collection(db, "posts");
+    const q = query(citiesRef, where("id", "==", id));
 
-    let propTitle = "..."
+    console.log(q);
+
+    let propTitle = id
     let propKeterangan = "..."
     let propHarga = 1
     let propSatuan = "Milyar"
