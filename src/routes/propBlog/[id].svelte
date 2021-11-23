@@ -38,14 +38,21 @@
       console.log("No such document!");
     }
 
-    console.log(q);
+    //console.log();
 
-    let propTitle = docSnap.title
+    let propTitle = "..."
+    let propKeterangan = "..."
+    let propHarga = 0
+    let propSatuan = "..."
+    let propKategori = "..."
+    let propHotList = false
+
+    /* let propTitle = docSnap.title
     let propKeterangan = docSnap.deskripsi
     let propHarga = docSnap.harga
     let propSatuan = docSnap.satuan
     let propKategori = docSnap.kategori
-    let propHotList = docSnap.hotlist
+    let propHotList = docSnap.hotlist */
 
     const updateForm = async () => {
         const docRef = await setDoc(doc(db, "posts", id), {
