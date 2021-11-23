@@ -27,23 +27,28 @@
     const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
     const db = browser && getFirestore();
 
-    const colRef = browser && collection(db, "posts");
-    //const q = browser && query(colRef, where("id", "==", id));
-
+    //const colRef = browser && collection(db, "posts");
     const docRef = doc(db, "posts", id);
-    const q = await getDoc(docRef);
+    const docSnap = getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log("Document data:", docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }
 
     console.log(q);
 
-    let propTitle = q.title
-    let propKeterangan = q.deskripsi
-    let propHarga = q.harga
-    let propSatuan = q.satuan
-    let propKategori = q.kategori
-    let propHotList = q.hotlist
+    let propTitle = docSnap.title
+    let propKeterangan = docSnap.deskripsi
+    let propHarga = docSnap.harga
+    let propSatuan = docSnap.satuan
+    let propKategori = docSnap.kategori
+    let propHotList = docSnap.hotlist
 
     const updateForm = async () => {
-        const docRef = await setDoc(doc(db, "posts", q.id), {
+        const docRef = await setDoc(doc(db, "posts", id), {
             title: propTitle,
             deskripsi: propKeterangan,
             harga: propHarga,
