@@ -25,7 +25,7 @@
         const auth = getAuth();
         const user = auth.currentUser;
 
-        if (user != nll) {
+        if (user != null) {
           // User is signed in, see docs for a list of available properties
           // https://firebase.google.com/docs/reference/js/firebase.User
           // ...
