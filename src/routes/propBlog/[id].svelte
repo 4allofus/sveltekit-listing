@@ -27,9 +27,9 @@
     const db = browser && getFirestore();
 
     const colRef = browser && collection(db, "posts");
-    const q = query(colRef, where("id", "==", id));
+    //const q = query(colRef, where("id", "==", id));
 
-    console.log(q);
+    //console.log(q);
 
     let propTitle = id
     let propKeterangan = "..."
