@@ -16,7 +16,7 @@
         //const colRef = browser && collection(db, "posts");
         const q = query(collection(db, "posts"), where("id", "==", id));
 
-        const post;
+        const post = "";
 
         const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc) => {
