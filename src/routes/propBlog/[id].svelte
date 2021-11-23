@@ -28,10 +28,10 @@
     const db = browser && getFirestore();
 
     //const colRef = browser && collection(db, "posts");
-    const docRef = doc(db, "posts", id);
-    const docSnap = getDoc(docRef);
+    const docRef = browser && doc(db, "posts", id);
+    const docSnap = browser && getDoc(docRef);
 
-    if (docSnap.exists()) {
+    if (docSnap) {
       console.log("Document data:", docSnap.data());
     } else {
       // doc.data() will be undefined in this case
