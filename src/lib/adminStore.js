@@ -1,5 +1,4 @@
 import { writable } from 'svelte/store';
 
-export const isAdmin = writable(false);
+export const isSignedIn = writable(false);
 
-export default isAdmin;

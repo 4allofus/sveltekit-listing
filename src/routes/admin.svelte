@@ -13,7 +13,7 @@
         
         import Listing from './_propListing.svelte'
         import AddProp from './_addProp.svelte'
-        import { isAdmin }  from "$lib/adminStore";
+        import { isSignedIn }  from "$lib/adminStore";
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
         const db = browser && getFirestore();
@@ -33,7 +33,7 @@
               const user = result.user;
               console.log(user.uid);
               if(user.uid == "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-                isAdmin = true;
+                isSignedIn = true;
               }
             }).catch((error) => {
               // Handle Errors here.
@@ -65,7 +65,7 @@
 
 </script>
 
-{#if isAdmin}
+{#if isSignedIn}
     <div class="paper continer-lg">
 	      <AddProp/>
     </div>
