@@ -41,8 +41,8 @@
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
-    import { isAdmin }  from '../stores/adminStore.js';
-    
+    import { isAdmin }  from '../../stores/adminStore.js';
+
     //import { initializeApp, getApps, getApp } from "firebase/app";
     /* import { getFirestore, collection, 
               query, where, onSnapshot, 
