@@ -54,12 +54,12 @@
     let propKategori = "..."
     let propHotList = false */
 
-    $: propTitle = docSnap.title
-    $: propKeterangan = docSnap.deskripsi
-    $: propHarga = docSnap.harga
-    $: propSatuan = docSnap.satuan
-    $: propKategori = docSnap.kategori
-    $: propHotList = docSnap.hotlist
+    let propTitle = docSnap.title
+    let propKeterangan = docSnap.deskripsi
+    let propHarga = docSnap.harga
+    let propSatuan = docSnap.satuan
+    let propKategori = docSnap.kategori
+    let propHotList = docSnap.hotlist
 
     const updateForm = async () => {
         const docRef = await setDoc(doc(db, "posts", id), {
@@ -79,10 +79,10 @@
     <div class="form-group">
       <div class="row flex-left">
         <div class="sm-12 md-12 lg-12 col">
-          <Input label="Judul" placeholder={propTitle} bind:value={propTitle} block/>
+          <Input label="Judul" bind:value={propTitle} block/>
         </div>
         <div class="sm-12 md-12 lg-12 col">
-          <Input rows="8" type="textarea" placeholder={propKeterangan} bind:value={propKeterangan} block/>
+          <Input rows="8" type="textarea" bind:value={propKeterangan} block/>
         </div>
         <div class="col-fill col">
           <input type=number label="Harga" bind:value={propHarga} min=0 max=1000>
