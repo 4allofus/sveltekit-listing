@@ -5,13 +5,14 @@
 
       return{
         props: {
-          
+          id,
         },
       };
     };
 </script>
 
 <script>
+    export let id;
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
