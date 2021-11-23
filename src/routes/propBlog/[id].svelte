@@ -54,12 +54,12 @@
     let propKategori = "..."
     let propHotList = false */
 
-    let propTitle = docSnap.title
-    let propKeterangan = docSnap.deskripsi
-    let propHarga = docSnap.harga
-    let propSatuan = docSnap.satuan
-    let propKategori = docSnap.kategori
-    let propHotList = docSnap.hotlist
+    $: propTitle = docSnap.title
+    $: propKeterangan = docSnap.deskripsi
+    $: propHarga = docSnap.harga
+    $: propSatuan = docSnap.satuan
+    $: propKategori = docSnap.kategori
+    $: propHotList = docSnap.hotlist
 
     const updateForm = async () => {
         const docRef = await setDoc(doc(db, "posts", id), {
