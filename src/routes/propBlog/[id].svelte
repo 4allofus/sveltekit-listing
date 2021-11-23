@@ -1,7 +1,6 @@
 <script context="module">
     export const load = async ({ page }) =>{
         const id = page.params.id;
-        console.log(page.params);
 
       return{
         props: {
