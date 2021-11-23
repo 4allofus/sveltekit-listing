@@ -17,6 +17,8 @@
         const docRef = doc(db, "posts", id);
         const docSnap = await getDoc(docRef);
 
+        const post = docSnap.data();
+
         if (docSnap.exists()) {
           console.log("Document data:", docSnap.data());
         } else {
@@ -26,14 +28,14 @@
 
       return{
         props: {
-          id, docSnap, db,
+          id, post, db,
         },
       };
     };
 </script>
 
 <script>
-    export let docSnap;
+    export let post;
     export let db;
     export let id;
     import 'papercss/dist/paper.min.css'
@@ -54,12 +56,12 @@
     let propKategori = "..."
     let propHotList = false */
 
-    let propTitle = docSnap.title
-    let propKeterangan = docSnap.deskripsi
-    let propHarga = docSnap.harga
-    let propSatuan = docSnap.satuan
-    let propKategori = docSnap.kategori
-    let propHotList = docSnap.hotlist
+    let propTitle = post.title
+    let propKeterangan = post.deskripsi
+    let propHarga = post.harga
+    let propSatuan = post.satuan
+    let propKategori = post.kategori
+    let propHotList = post.hotlist
 
     const updateForm = async () => {
         const docRef = await setDoc(doc(db, "posts", id), {
