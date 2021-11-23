@@ -15,13 +15,14 @@
 
         //const colRef = browser && collection(db, "posts");
         const q = query(collection(db, "posts"), where("id", "==", id));
+
         let post;
 
         const querySnapshot = await getDocs(q);
           querySnapshot.forEach((doc) => {
           // doc.data() is never undefined for query doc snapshots
           console.log(doc.id, " => ", doc.data());
-          post = doc;
+         
         });
 
       return{
@@ -45,7 +46,7 @@
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
 
-    let propTitle = post.id
+    let propTitle = "..."
     let propKeterangan = "..."
     let propHarga = 0
     let propSatuan = "..."
@@ -60,7 +61,7 @@
     let propHotList = docSnap.hotlist */
 
     const updateForm = async () => {
-        const docRef = await setDoc(doc(db, "posts", post.id), {
+        const docRef = await setDoc(doc(db, "posts", "post.id"), {
             title: propTitle,
             deskripsi: propKeterangan,
             harga: propHarga,
