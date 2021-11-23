@@ -19,7 +19,8 @@
     import { initializeApp, getApps, getApp } from "firebase/app";
     import { getFirestore, collection, 
               query, where, onSnapshot, 
-              addDoc, doc, deleteDoc } from "firebase/firestore";
+              addDoc, doc, deleteDoc,
+            getDoc} from "firebase/firestore";
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
 
@@ -27,7 +28,10 @@
     const db = browser && getFirestore();
 
     const colRef = browser && collection(db, "posts");
-    const q = browser && query(colRef, where("id", "==", id));
+    //const q = browser && query(colRef, where("id", "==", id));
+
+    const docRef = doc(db, "posts", id);
+    const q = await getDoc(docRef);
 
     console.log(q);
 
