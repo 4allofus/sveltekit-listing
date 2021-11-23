@@ -65,7 +65,7 @@
 
 </script>
 
-{#if $isSignedIn}
+{#if isSignedIn}
     <div class="paper continer-lg">
 	      <AddProp/>
     </div>
