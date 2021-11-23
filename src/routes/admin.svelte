@@ -2,7 +2,7 @@
       import 'papercss/dist/paper.min.css'
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
-      import { getAuth, onAuthStateChanged } from "firebase/auth";
+      import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
       
       import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore, collection, 
@@ -22,20 +22,26 @@
         let data = [];
         let isAdmin = true;
         
+        const provider = new GoogleAuthProvider();;
         const auth = getAuth();
-        const user = auth.currentUser;
-
-        if (user != null) {
-          // User is signed in, see docs for a list of available properties
-          // https://firebase.google.com/docs/reference/js/firebase.User
-          // ...
-          console.log(user.uid)
-          isAdmin = true;
-        } else {
-          // No user is signed in.
-          console.log("user signed out")
-          isAdmin = false;
-        }
+          signInWithPopup(auth, provider)
+            .then((result) => {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              const credential = GoogleAuthProvider.credentialFromResult(result);
+              const token = credential.accessToken;
+              // The signed-in user info.
+              const user = result.user;
+              console.log(user);
+            }).catch((error) => {
+              // Handle Errors here.
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // The email of the user's account used.
+              const email = error.email;
+              // The AuthCredential type that was used.
+              const credential = GoogleAuthProvider.credentialFromError(error);
+              // ...
+          });
 
       const unsubscribe = 
         browser &&
