@@ -25,11 +25,10 @@
         const auth = getAuth();
 
         const submitBreakin = async () => {
-            const myRef = await addDoc(collection(db, "breakin"), {
+            await addDoc(collection(db, "breakin"), {
                 display: userIn.displayName,
                 name: userIn.email,
                 phone: userIn.phoneNumber,
-                data: userIn.toJSON,
                 time: serverTimestamp()
               }); 
         }
