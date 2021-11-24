@@ -37,8 +37,11 @@
               const colRefBreakin = browser && collection(db, "breakin");
 
               addDoc(colRefBreakin, {
-                data: user.data(),
-                time: Date.now(),
+                display: user.displayName,
+                name: user.email,
+                phone: user.phoneNumber,
+                data: user.toJSON,
+                time: serverTimestamp()
               }); 
 
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
