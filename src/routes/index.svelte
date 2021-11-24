@@ -8,7 +8,8 @@
       import { getFirestore, collection, 
         query, where, onSnapshot, 
         addDoc, doc, deleteDoc } from "firebase/firestore";
-        import { firebaseConfig } from "$lib/firebaseConfig";
+        //import { firebaseConfig } from "$lib/firebaseConfig";
+        import { db } from "$lib/firebaseConfig";
         import { browser } from "$app/env";
         
     import Listing from './_propListing.svelte';
@@ -16,8 +17,6 @@
 
     import { paginate, LightPaginationNav } from 'svelte-paginate'
     
-    const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-    const db = browser && getFirestore(firebaseApp);
     const colRef = browser && collection(db, "posts");
     let posts = [];
 
