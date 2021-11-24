@@ -1,4 +1,3 @@
-import { readable } from 'svelte/store';
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { browser } from "$app/env";
 
