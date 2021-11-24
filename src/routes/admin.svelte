@@ -35,12 +35,14 @@
               }); 
         }
 
-        setPersistence(auth, browserSessionPersistence)
+        console.log("persisteance");
+        setPersistence(auth, inMemoryPersistence)
         .then(() => {
           const provider = new GoogleAuthProvider();
           // In memory persistence will be applied to the signed in Google user
           // even though the persistence was set to 'none' and a page redirect
           // occurred.
+          console.log("redirect");
           return signInWithRedirect(auth, provider);
         })
         .catch((error) => {
@@ -49,6 +51,7 @@
           const errorMessage = error.message;
         });
 
+        console.log("result");
         getRedirectResult(auth)
             .then((result) => {
               // This gives you a Google Access Token. You can use it to access Google APIs.
@@ -57,8 +60,6 @@
 
               // The signed-in user info.
               const user = result.user;
-
-              // The signed-in user info.
               
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
