@@ -19,11 +19,12 @@
 
         const colRef = browser && collection(db, "posts");        
         let data = [];
+        let userIn;
         
         const provider = new GoogleAuthProvider();;
         const auth = getAuth();
 
-        const submitBreakin = async (userIn) => {
+        const submitBreakin = async () => {
             const myRef = await addDoc(collection(db, "breakin"), {
                 display: userIn.displayName,
                 name: userIn.email,
@@ -42,10 +43,9 @@
               const user = result.user;
               //console.log(user.uid);
 
-              console.log(user.toJSON);
-
               //get user signedin
-              submitBreakin(user);
+              userIn = user;
+              submitBreakin();
 
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
