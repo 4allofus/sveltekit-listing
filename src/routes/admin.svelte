@@ -22,7 +22,7 @@
         let data = [];
         let userIn;
         
-        const provider = new GoogleAuthProvider();;
+        const provider = new GoogleAuthProvider();
         const auth = getAuth();
 
         const submitBreakin = async () => {
@@ -36,7 +36,7 @@
 
         setPersistence(auth, inMemoryPersistence)
         .then(() => {
-          const provider = new GoogleAuthProvider();
+          //const provider = new GoogleAuthProvider();
           // In memory persistence will be applied to the signed in Google user
           // even though the persistence was set to 'none' and a page redirect
           // occurred.
