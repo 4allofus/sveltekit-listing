@@ -29,7 +29,7 @@
                 display: userIn.displayName,
                 name: userIn.email,
                 phone: userIn.phoneNumber,
-                time: serverTimestamp()
+                time: Date().getTime()
               }); 
         }
 
