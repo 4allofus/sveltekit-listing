@@ -1,5 +1,10 @@
 <script context="module">
   import { db } from "$lib/firebaseConfig";
+  import { getFirestore, collection, 
+        query, where, onSnapshot, 
+        addDoc, doc, deleteDoc } from "firebase/firestore";
+        import { browser } from "$app/env";
+
 
   export const load = async ({ page }) =>{
     const colRef = browser && collection(db, "posts");
@@ -27,19 +32,19 @@
 
 <script>
     export let posts;
-    
+
     //untuk posts
     import 'papercss/dist/paper.min.css'
 
     import { Alert, Button } from 'spaper';
 
-    import { initializeApp, getApps, getApp } from "firebase/app";
+    /* import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore, collection, 
         query, where, onSnapshot, 
         addDoc, doc, deleteDoc } from "firebase/firestore";
-        //import { firebaseConfig } from "$lib/firebaseConfig";
-        //import { db } from "$lib/firebaseConfig";
-        import { browser } from "$app/env";
+        import { firebaseConfig } from "$lib/firebaseConfig";
+        import { db } from "$lib/firebaseConfig";
+        import { browser } from "$app/env"; */
         
     import Listing from './_propListing.svelte';
     import Typewriter from './Typewriter.svelte'
