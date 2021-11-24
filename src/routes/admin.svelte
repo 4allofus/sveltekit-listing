@@ -24,7 +24,7 @@
         let userIn;
         
         const provider = new GoogleAuthProvider();
-        const auth = getAuth();
+        const auth = browser && getAuth();
 
         const submitBreakin = async () => {
             await addDoc(collection(db, "breakin"), {
