@@ -14,7 +14,7 @@
 <script>
     //untuk posts
     import 'papercss/dist/paper.min.css'
-    import Listing from './_listing.svelte'
+    import Listing from '_listing.svelte'
     import { Alert, Button } from 'spaper';
     import Typewriter from './Typewriter.svelte'
 

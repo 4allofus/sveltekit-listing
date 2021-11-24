@@ -13,6 +13,7 @@
   },
   "type": "module",
   "dependencies": {
+    "@supabase/supabase-js": "^1.28.1",
     "firebase": "^9.4.1",
     "papercss": "^1.8.2",
     "spaper": "^0.1.2",
