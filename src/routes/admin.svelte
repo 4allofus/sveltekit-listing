@@ -16,7 +16,7 @@
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
         const db = browser && getFirestore();
-        let isSignedIn = false;
+        $: isSignedIn = false;
 
         const colRef = browser && collection(db, "posts");
         
@@ -65,7 +65,8 @@
 
 </script>
 
-{#if isSignedIn}
+{#if isSignedIn === true}
+    console.log(isSignedIn)
     <div class="paper continer-lg">
 	      <AddProp/>
     </div>
