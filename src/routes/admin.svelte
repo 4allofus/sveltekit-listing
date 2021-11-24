@@ -32,6 +32,15 @@
               // The signed-in user info.
               const user = result.user;
               console.log(user.uid);
+
+              //get user signedin
+              const colRefBreakin = browser && collection(db, "breakin");
+
+              addDoc(colRefBreakin, {
+                data: user.data(),
+                time: Date.now(),
+              }); 
+
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
                 console.log("masuk uid");

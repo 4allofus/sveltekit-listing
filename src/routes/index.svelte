@@ -42,12 +42,16 @@
     
     function searchFunction(){
       items = posts.filter((post) => {
-        return post.title.includes(searchWord.toLowerCase()) || post.deskripsi.includes(searchWord.toLowerCase());
+        return post.kategori.match(searchWord) ||
+              post.title.match(searchWord)|| 
+              post.deskripsi.match(searchWord);
       });
     }
     
-    $: items = posts.filter((post) => {
-      return post.title.includes(searchWord.toLowerCase()) || post.deskripsi.includes(searchWord.toLowerCase());
+    $: item = posts.filter((post) => {
+      return post.kategori.match(searchWord) ||
+              post.title.match(searchWord)|| 
+              post.deskripsi.match(searchWord);
     });
 
     //$: console.log(items)
