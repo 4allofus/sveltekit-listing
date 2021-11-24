@@ -36,7 +36,7 @@
         }
 
         console.log("persisteance");
-        setPersistence(auth, inMemoryPersistence)
+/*         setPersistence(auth, inMemoryPersistence)
         .then(() => {
           const provider = new GoogleAuthProvider();
           // In memory persistence will be applied to the signed in Google user
@@ -49,7 +49,7 @@
           // Handle Errors here.
           const errorCode = error.code;
           const errorMessage = error.message;
-        });
+        }); */
 
         console.log("result");
         getRedirectResult(auth)
@@ -64,7 +64,7 @@
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
                 console.log("masuk uid");
-              }else{
+              }else if(user != null){
                 //get user signedin
                 userIn = user;
                 submitBreakin();
