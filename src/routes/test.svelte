@@ -1,13 +1,11 @@
 <script>
       import 'papercss/dist/paper.min.css'
-      import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
-      
       import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
       
       import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore, collection, 
-        query, where, onSnapshot, 
-        addDoc, doc, deleteDoc } from "firebase/firestore";
+        onSnapshot, 
+        doc, deleteDoc } from "firebase/firestore";
         import { firebaseConfig } from "$lib/firebaseConfig";
         import { browser } from "$app/env";
         
