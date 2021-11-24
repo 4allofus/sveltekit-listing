@@ -3,7 +3,8 @@
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
       import { getAuth, signInWithPopup, GoogleAuthProvider, 
-        setPersistence, signInWithRedirect, inMemoryPersistence, } from "firebase/auth";
+        setPersistence, signInWithRedirect, 
+        getRedirectResult, inMemoryPersistence, } from "firebase/auth";
       
       import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore, collection, onSnapshot, 
@@ -40,42 +41,73 @@
           // In memory persistence will be applied to the signed in Google user
           // even though the persistence was set to 'none' and a page redirect
           // occurred.
-          return (
-                    signInWithPopup(auth, provider)
-                      .then((result) => {
-                        // This gives you a Google Access Token. You can use it to access the Google API.
-                        const credential = GoogleAuthProvider.credentialFromResult(result);
-                        const token = credential.accessToken;
-                        // The signed-in user info.
-                        const user = result.user;
-                        //console.log(user.uid);
-                        
-                        if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-                          isSignedIn = true;
-                          console.log("masuk uid");
-                        }else{
-                          //get user signedin
-                          userIn = user;
-                          submitBreakin();
-                        }
-            
-                      }).catch((error) => {
-                        // Handle Errors here.
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        // The email of the user's account used.
-                        const email = error.email;
-                        // The AuthCredential type that was used.
-                        const credential = GoogleAuthProvider.credentialFromError(error);
-                        // ...
-                    });
-          );
+          return signInWithRedirect(auth, provider);
         })
         .catch((error) => {
           // Handle Errors here.
           const errorCode = error.code;
           const errorMessage = error.message;
         });
+
+        getRedirectResult(auth)
+            .then((result) => {
+              // This gives you a Google Access Token. You can use it to access Google APIs.
+              const credential = GoogleAuthProvider.credentialFromResult(result);
+              const token = credential.accessToken;
+
+              // The signed-in user info.
+              const user = result.user;
+
+              // The signed-in user info.
+              
+              if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
+                isSignedIn = true;
+                console.log("masuk uid");
+              }else{
+                //get user signedin
+                userIn = user;
+                submitBreakin();
+              }
+
+            }).catch((error) => {
+              // Handle Errors here.
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // The email of the user's account used.
+              const email = error.email;
+              // The AuthCredential type that was used.
+              const credential = GoogleAuthProvider.credentialFromError(error);
+              // ...
+            });
+
+/*           signInWithPopup(auth, provider)
+            .then((result) => {
+              // This gives you a Google Access Token. You can use it to access the Google API.
+              const credential = GoogleAuthProvider.credentialFromResult(result);
+              const token = credential.accessToken;
+              // The signed-in user info.
+              const user = result.user;
+              //console.log(user.uid);
+              
+              if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
+                isSignedIn = true;
+                console.log("masuk uid");
+              }else{
+                //get user signedin
+                userIn = user;
+                submitBreakin();
+              }
+
+            }).catch((error) => {
+              // Handle Errors here.
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              // The email of the user's account used.
+              const email = error.email;
+              // The AuthCredential type that was used.
+              const credential = GoogleAuthProvider.credentialFromError(error);
+              // ...
+          }); */
 
       const unsubscribe = 
         browser &&
