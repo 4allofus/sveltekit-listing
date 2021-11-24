@@ -23,8 +23,8 @@
         let data = [];
         let userIn;
         
-        const provider = new GoogleAuthProvider();
-        const auth = browser && getAuth();
+        //const provider = new GoogleAuthProvider();
+        const auth = getAuth();
 
         const submitBreakin = async () => {
             await addDoc(collection(db, "breakin"), {
@@ -37,7 +37,7 @@
 
         setPersistence(auth, browserSessionPersistence)
         .then(() => {
-          //const provider = new GoogleAuthProvider();
+          const provider = new GoogleAuthProvider();
           // In memory persistence will be applied to the signed in Google user
           // even though the persistence was set to 'none' and a page redirect
           // occurred.
@@ -73,11 +73,6 @@
               // Handle Errors here.
               const errorCode = error.code;
               const errorMessage = error.message;
-              // The email of the user's account used.
-              const email = error.email;
-              // The AuthCredential type that was used.
-              const credential = GoogleAuthProvider.credentialFromError(error);
-              // ...
             });
 
 /*           signInWithPopup(auth, provider)
