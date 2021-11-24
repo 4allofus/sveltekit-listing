@@ -3,7 +3,7 @@
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
       import { getAuth, signInWithPopup, GoogleAuthProvider, 
-        setPersistence, signInWithRedirect, 
+        setPersistence, signInWithRedirect, browserSessionPersistence,
         getRedirectResult, inMemoryPersistence, } from "firebase/auth";
       
       import { initializeApp, getApps, getApp } from "firebase/app";
@@ -35,7 +35,7 @@
               }); 
         }
 
-        setPersistence(auth, inMemoryPersistence)
+        setPersistence(auth, browserSessionPersistence)
         .then(() => {
           //const provider = new GoogleAuthProvider();
           // In memory persistence will be applied to the signed in Google user
