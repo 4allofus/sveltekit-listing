@@ -21,7 +21,7 @@
 
       return{
         props: {
-          id, post, db,
+          id, post,
         },
       };
     };
@@ -29,7 +29,7 @@
 
 <script>
     export let post;
-    export let db;
+    //export let db;
     export let id;
     import 'papercss/dist/paper.min.css'
     import { Input, Button, Select, Checkbox } from 'spaper';
