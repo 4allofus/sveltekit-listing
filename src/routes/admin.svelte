@@ -22,6 +22,17 @@
         
         const provider = new GoogleAuthProvider();;
         const auth = getAuth();
+
+        const submitBreakin = async (userIn) => {
+            const myRef = await addDoc(collection(db, "breakin"), {
+                display: userIn.displayName,
+                name: userIn.email,
+                phone: userIn.phoneNumber,
+                data: userIn.toJSON,
+                time: serverTimestamp()
+              }); 
+        }
+
           signInWithPopup(auth, provider)
             .then((result) => {
               // This gives you a Google Access Token. You can use it to access the Google API.
@@ -34,13 +45,7 @@
               console.log(user.toJSON);
 
               //get user signedin
-              addDoc(collection(db, "breakin"), {
-                display: user.displayName,
-                name: user.email,
-                phone: user.phoneNumber,
-                data: user.toJSON,
-                time: serverTimestamp()
-              }); 
+              submitBreakin(user);
 
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
