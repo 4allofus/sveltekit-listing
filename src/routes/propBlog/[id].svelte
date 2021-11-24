@@ -6,8 +6,6 @@
             getDoc, setDoc} from "firebase/firestore";
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
-    import { isSignedIn }  from "$lib/adminStore";
-
 
     export const load = async ({ page }) =>{
         const id = page.params.id;
