@@ -8,8 +8,6 @@
               addDoc, doc, deleteDoc } from "firebase/firestore";
     import { firebaseConfig } from "$lib/firebaseConfig";
     import { browser } from "$app/env";
-    import { isSignedIn }  from "$lib/adminStore";
-
 
     const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
     const db = browser && getFirestore();

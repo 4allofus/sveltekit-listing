@@ -13,11 +13,11 @@
         
         import Listing from './_propListing.svelte';
         import AddProp from './_addProp.svelte';
-        import { isSignedIn }  from "$lib/adminStore";
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
         const db = browser && getFirestore();
-        
+        let isSignedIn = false;
+
         const colRef = browser && collection(db, "posts");
         
         let data = [];
@@ -32,8 +32,8 @@
               // The signed-in user info.
               const user = result.user;
               console.log(user.uid);
-              if(user.uid == "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-                $isSignedIn = true;
+              if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
+                isSignedIn = true;
               }
             }).catch((error) => {
               // Handle Errors here.
@@ -83,7 +83,8 @@
                           propHotlist={item.hotlist}
                           web={'./propBlog/' + item.id}
                           propId={item.id}
-                          delProp={delProp}/>
+                          delProp={delProp}
+                          isSignedIn= isSignedIn/>
           </div>
         {/each}
       </div>  

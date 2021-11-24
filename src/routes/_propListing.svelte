@@ -1,6 +1,4 @@
 <script>
-    import { isSignedIn }  from "$lib/adminStore";
-
       export let propTitle = "...";
       export let propKeterangan = "...";
       export let propHarga = 1;
@@ -11,6 +9,7 @@
       export let web = "empty";
       export let propId;
       export let delProp;
+      export let isSignedIn = false;
 </script>
 
 <div class="card">
