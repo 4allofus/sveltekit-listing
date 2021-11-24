@@ -5,8 +5,7 @@
       import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
       
       import { initializeApp, getApps, getApp } from "firebase/app";
-      import { getFirestore, collection, 
-        query, where, onSnapshot, 
+      import { getFirestore, collection, onSnapshot, 
         addDoc, doc, deleteDoc } from "firebase/firestore";
         import { firebaseConfig } from "$lib/firebaseConfig";
         import { browser } from "$app/env";
@@ -19,6 +18,7 @@
         $: isSignedIn = false;
 
         const colRef = browser && collection(db, "posts");
+        const colRefBreakin = browser && collection(db, "breakin");
         
         let data = [];
         
@@ -31,11 +31,9 @@
               const token = credential.accessToken;
               // The signed-in user info.
               const user = result.user;
-              console.log(user.uid);
+              //console.log(user.uid);
 
               //get user signedin
-              const colRefBreakin = browser && collection(db, "breakin");
-
               addDoc(colRefBreakin, {
                 display: user.displayName,
                 name: user.email,
