@@ -25,8 +25,10 @@
       <h5 class="card-subtitle">{propHarga} {propSatuan}</h5>
       <p class="card-text">{propKategori}</p>
       <p class="card-text">{propKeterangan}</p>
+      <p class="card-text">Luar : {isSignedIn}</p>
 
-      {#if isSignedIn}
+      {#if isSignedIn === true}
+        <p class="card-text">Dalam : {isSignedIn}</p>
         <button><a sveltekit:prefetch href={web}>Edit</a></button>
         <button on:click={delProp(propId)}>Delete</button>
        {/if}
