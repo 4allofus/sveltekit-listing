@@ -48,7 +48,7 @@
       });
     }
     
-    $: item = posts.filter((post) => {
+    $: items = posts.filter((post) => {
       return post.kategori.match(searchWord) ||
               post.title.match(searchWord)|| 
               post.deskripsi.match(searchWord);
