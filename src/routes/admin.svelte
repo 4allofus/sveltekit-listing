@@ -17,9 +17,7 @@
         const db = browser && getFirestore(firebaseApp);
         $: isSignedIn = false;
 
-        const colRef = browser && collection(db, "posts");
-        const colRefBreakin = browser && collection(db, "breakin");
-        
+        const colRef = browser && collection(db, "posts");        
         let data = [];
         
         const provider = new GoogleAuthProvider();;
@@ -33,8 +31,10 @@
               const user = result.user;
               //console.log(user.uid);
 
+              console.log(user.toJSON);
+
               //get user signedin
-              addDoc(colRefBreakin, {
+              addDoc(collection(db, "breakin"), {
                 display: user.displayName,
                 name: user.email,
                 phone: user.phoneNumber,
