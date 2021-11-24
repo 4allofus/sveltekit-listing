@@ -1,15 +1,26 @@
-<script context="module">
-  import { db } from "$lib/firebaseConfig";
-  import { getFirestore, collection, 
+<script>
+    //untuk posts
+    import 'papercss/dist/paper.min.css'
+
+    import { Alert, Button } from 'spaper';
+
+    import { initializeApp, getApps, getApp } from "firebase/app";
+      import { getFirestore, collection, 
         query, where, onSnapshot, 
         addDoc, doc, deleteDoc } from "firebase/firestore";
+        import { firebaseConfig } from "$lib/firebaseConfig";
         import { browser } from "$app/env";
+        
+    import Listing from './_propListing.svelte';
+    import Typewriter from './Typewriter.svelte'
 
-
-  export const load = async ({ page }) =>{
+    import { paginate, LightPaginationNav } from 'svelte-paginate'
+    
+    const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+    const db = browser && getFirestore(firebaseApp);
     const colRef = browser && collection(db, "posts");
     let posts = [];
-  
+
     const unsubscribe = 
         browser &&
         onSnapshot(colRef, (querySnapshot) => {
@@ -21,50 +32,6 @@
           console.table(fbTodos);
           posts = fbTodos;
         });
-    return{
-        props: {
-          posts, db,
-        },
-      };
-    };
-
-</script>
-
-<script>
-    export let posts;
-
-    //untuk posts
-    import 'papercss/dist/paper.min.css'
-
-    import { Alert, Button } from 'spaper';
-
-    /* import { initializeApp, getApps, getApp } from "firebase/app";
-      import { getFirestore, collection, 
-        query, where, onSnapshot, 
-        addDoc, doc, deleteDoc } from "firebase/firestore";
-        import { firebaseConfig } from "$lib/firebaseConfig";
-        import { db } from "$lib/firebaseConfig";
-        import { browser } from "$app/env"; */
-        
-    import Listing from './_propListing.svelte';
-    import Typewriter from './Typewriter.svelte'
-
-    import { paginate, LightPaginationNav } from 'svelte-paginate'
-    
-/*     const colRef = browser && collection(db, "posts");
-    let posts = [];
-
-    const unsubscribe = 
-        browser &&
-        onSnapshot(colRef, (querySnapshot) => {
-          let fbTodos = [];
-          querySnapshot.forEach((doc) => {
-            let todo = {...doc.data(), id: doc.id};
-            fbTodos = [todo, ...fbTodos];
-          });
-          console.table(fbTodos);
-          posts = fbTodos;
-        }); */
 
     //let items = posts;
     let currentPage = 1;
