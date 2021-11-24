@@ -42,9 +42,9 @@
     
     function searchFunction(){
       items = posts.filter((post) => {
-        return post.kategori.match(searchWord) ||
-              post.title.match(searchWord)|| 
-              post.deskripsi.match(searchWord);
+        return (post.kategori).toLowerCase().includes(searchWord.toLowerCase()) ||
+              (post.title).toLowerCase().includes(searchWord.toLowerCase())|| 
+              (post.deskripsi).toLowerCase().includes(searchWord.toLowerCase());
       });
     }
     

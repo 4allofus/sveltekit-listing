@@ -41,15 +41,16 @@
               // The signed-in user info.
               const user = result.user;
               //console.log(user.uid);
-
-              //get user signedin
-              userIn = user;
-              submitBreakin();
-
+              
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
                 console.log("masuk uid");
+              }else{
+                //get user signedin
+                userIn = user;
+                submitBreakin();
               }
+
             }).catch((error) => {
               // Handle Errors here.
               const errorCode = error.code;
