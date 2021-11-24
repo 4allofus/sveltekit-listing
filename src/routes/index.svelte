@@ -1,27 +1,38 @@
-<script context="module">
-  export const load = async ({ fetch }) =>{
-    const res = await fetch("https://jsonplaceholder.typicode.com/posts");
-    const posts = await res.json();
-    return{
-      props: {
-        posts
-      },
-    };
-  };
-
-</script>
-
 <script>
     //untuk posts
     import 'papercss/dist/paper.min.css'
     import Listing from './_listing.svelte'
     import { Alert, Button } from 'spaper';
-    import Typewriter from './Typewriter.svelte'
 
-    export let posts;
+    import { initializeApp, getApps, getApp } from "firebase/app";
+      import { getFirestore, collection, 
+        query, where, onSnapshot, 
+        addDoc, doc, deleteDoc } from "firebase/firestore";
+        import { firebaseConfig } from "$lib/firebaseConfig";
+        import { browser } from "$app/env";
+        
+    import Listing from './_propListing.svelte';
+    import Typewriter from './Typewriter.svelte'
 
     import { paginate, LightPaginationNav } from 'svelte-paginate'
     
+    const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+    const db = browser && getFirestore();
+    const colRef = browser && collection(db, "posts");
+    let posts = [];
+
+    const unsubscribe = 
+        browser &&
+        onSnapshot(colRef, (querySnapshot) => {
+          let fbTodos = [];
+          querySnapshot.forEach((doc) => {
+            let todo = {...doc.data(), id: doc.id};
+            fbTodos = [todo, ...fbTodos];
+          });
+          console.table(fbTodos);
+          posts = fbTodos;
+        });
+
     //let items = posts;
     let currentPage = 1;
     let pageSize = 12;
@@ -31,15 +42,15 @@
     
     function searchFunction(){
       items = posts.filter((post) => {
-        return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
+        return post.title.includes(searchWord.toLowerCase()) || post.deskripsi.includes(searchWord.toLowerCase());
       });
     }
     
     $: items = posts.filter((post) => {
-      return post.title.includes(searchWord.toLowerCase()) || post.body.includes(searchWord.toLowerCase());
+      return post.title.includes(searchWord.toLowerCase()) || post.deskripsi.includes(searchWord.toLowerCase());
     });
 
-    $: console.log(items)
+    //$: console.log(items)
     //ready to paginate
     $: paginatedItems = paginate({ items, pageSize, currentPage })
 
@@ -99,7 +110,15 @@
         {#if paginatedItems.length > 0}
           {#each paginatedItems as item}
           <div class="sm-5 md-4 lg-3 col">
-            <Listing title={item.title} subtitle={item.title} body={item.body} web={'./blog/' + item.id}/>
+            <Listing propTitle={item.title} 
+                          propKeterangan={item.deskripsi} 
+                          propKategori={item.kategori} 
+                          propHarga={item.harga}
+                          propSatuan={item.satuan}
+                          propHotlist={item.hotlist}
+                          web={'./propBlog/' + item.id}
+                          propId={item.id}
+                          />
           </div>
           {/each}
         {:else}
