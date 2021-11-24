@@ -1,22 +1,15 @@
 <script context="module">
-    import { initializeApp, getApps, getApp } from "firebase/app";
-    import { getFirestore, collection, 
-              query, where, onSnapshot, 
-              addDoc, doc, deleteDoc,
-            getDoc, setDoc} from "firebase/firestore";
-    import { firebaseConfig } from "$lib/firebaseConfig";
-    import { browser } from "$app/env";
+    import { doc, getDoc, setDoc} from "firebase/firestore";
+    import { db } from "$lib/firebaseConfig";
 
     export const load = async ({ page }) =>{
         const id = page.params.id;
 
-        const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-        const db = browser && getFirestore();
+        //const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+        //const db = browser && getFirestore();
 
-        //const colRef = browser && collection(db, "posts");
         const docRef = doc(db, "posts", id);
         const docSnap = await getDoc(docRef);
-
         const post = docSnap.data();
 
         /* if (docSnap.exists()) {
@@ -39,7 +32,7 @@
     export let db;
     export let id;
     import 'papercss/dist/paper.min.css'
-    import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
+    import { Input, Button, Select, Checkbox } from 'spaper';
 
     //import { initializeApp, getApps, getApp } from "firebase/app";
     /* import { getFirestore, collection, 

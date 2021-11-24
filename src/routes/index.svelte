@@ -1,4 +1,33 @@
+<script context="module">
+  import { db } from "$lib/firebaseConfig";
+
+  export const load = async ({ page }) =>{
+    const colRef = browser && collection(db, "posts");
+    let posts = [];
+  
+    const unsubscribe = 
+        browser &&
+        onSnapshot(colRef, (querySnapshot) => {
+          let fbTodos = [];
+          querySnapshot.forEach((doc) => {
+            let todo = {...doc.data(), id: doc.id};
+            fbTodos = [todo, ...fbTodos];
+          });
+          console.table(fbTodos);
+          posts = fbTodos;
+        });
+    return{
+        props: {
+          posts, db,
+        },
+      };
+    };
+
+</script>
+
 <script>
+    export let posts;
+    
     //untuk posts
     import 'papercss/dist/paper.min.css'
 
@@ -9,7 +38,7 @@
         query, where, onSnapshot, 
         addDoc, doc, deleteDoc } from "firebase/firestore";
         //import { firebaseConfig } from "$lib/firebaseConfig";
-        import { db } from "$lib/firebaseConfig";
+        //import { db } from "$lib/firebaseConfig";
         import { browser } from "$app/env";
         
     import Listing from './_propListing.svelte';
@@ -17,7 +46,7 @@
 
     import { paginate, LightPaginationNav } from 'svelte-paginate'
     
-    const colRef = browser && collection(db, "posts");
+/*     const colRef = browser && collection(db, "posts");
     let posts = [];
 
     const unsubscribe = 
@@ -30,7 +59,7 @@
           });
           console.table(fbTodos);
           posts = fbTodos;
-        });
+        }); */
 
     //let items = posts;
     let currentPage = 1;
