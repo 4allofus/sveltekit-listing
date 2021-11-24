@@ -90,7 +90,3 @@
         {/each}
       </div>  
     </div>
-
-    <div class="paper container-lg">  
-      <Table columns={['title', 'deskripsi', 'harga', 'satuan', 'kategori', 'hotlist']}  {data} hoverable/>
-    </div>

@@ -1,7 +1,7 @@
 <script>
     //untuk posts
     import 'papercss/dist/paper.min.css'
-    import Listing from './_listing.svelte'
+
     import { Alert, Button } from 'spaper';
 
     import { initializeApp, getApps, getApp } from "firebase/app";
