@@ -34,6 +34,7 @@
               console.log(user.uid);
               if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
                 isSignedIn = true;
+                console.log("masuk uid");
               }
             }).catch((error) => {
               // Handle Errors here.
@@ -66,7 +67,6 @@
 </script>
 
 {#if isSignedIn === true}
-    console.log(isSignedIn)
     <div class="paper continer-lg">
 	      <AddProp/>
     </div>
@@ -85,7 +85,7 @@
                           web={'./propBlog/' + item.id}
                           propId={item.id}
                           delProp={delProp}
-                          isSignedIn= isSignedIn/>
+                          isSignedIn={isSignedIn}/>
           </div>
         {/each}
       </div>  
