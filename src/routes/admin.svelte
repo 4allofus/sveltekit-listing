@@ -2,7 +2,8 @@
       import 'papercss/dist/paper.min.css'
       import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
       
-      import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+      import { getAuth, signInWithPopup, GoogleAuthProvider, 
+        setPersistence, signInWithRedirect, inMemoryPersistence, } from "firebase/auth";
       
       import { initializeApp, getApps, getApp } from "firebase/app";
       import { getFirestore, collection, onSnapshot, 
@@ -33,34 +34,48 @@
               }); 
         }
 
-          signInWithPopup(auth, provider)
-            .then((result) => {
-              // This gives you a Google Access Token. You can use it to access the Google API.
-              const credential = GoogleAuthProvider.credentialFromResult(result);
-              const token = credential.accessToken;
-              // The signed-in user info.
-              const user = result.user;
-              //console.log(user.uid);
-              
-              if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-                isSignedIn = true;
-                console.log("masuk uid");
-              }else{
-                //get user signedin
-                userIn = user;
-                submitBreakin();
-              }
-
-            }).catch((error) => {
-              // Handle Errors here.
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              // The email of the user's account used.
-              const email = error.email;
-              // The AuthCredential type that was used.
-              const credential = GoogleAuthProvider.credentialFromError(error);
-              // ...
-          });
+        setPersistence(auth, inMemoryPersistence)
+        .then(() => {
+          const provider = new GoogleAuthProvider();
+          // In memory persistence will be applied to the signed in Google user
+          // even though the persistence was set to 'none' and a page redirect
+          // occurred.
+          return (
+                    signInWithPopup(auth, provider)
+                      .then((result) => {
+                        // This gives you a Google Access Token. You can use it to access the Google API.
+                        const credential = GoogleAuthProvider.credentialFromResult(result);
+                        const token = credential.accessToken;
+                        // The signed-in user info.
+                        const user = result.user;
+                        //console.log(user.uid);
+                        
+                        if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
+                          isSignedIn = true;
+                          console.log("masuk uid");
+                        }else{
+                          //get user signedin
+                          userIn = user;
+                          submitBreakin();
+                        }
+            
+                      }).catch((error) => {
+                        // Handle Errors here.
+                        const errorCode = error.code;
+                        const errorMessage = error.message;
+                        // The email of the user's account used.
+                        const email = error.email;
+                        // The AuthCredential type that was used.
+                        const credential = GoogleAuthProvider.credentialFromError(error);
+                        // ...
+                    });
+          );
+        })
+        .catch((error) => {
+          // Handle Errors here.
+          const errorCode = error.code;
+          const errorMessage = error.message;
+        });
 
       const unsubscribe = 
         browser &&
