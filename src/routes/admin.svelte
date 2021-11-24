@@ -14,7 +14,7 @@
         import AddProp from './_addProp.svelte';
         
         const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-        const db = browser && getFirestore();
+        const db = browser && getFirestore(firebaseApp);
         $: isSignedIn = false;
 
         const colRef = browser && collection(db, "posts");

@@ -10,7 +10,7 @@
     import { browser } from "$app/env";
 
     const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-    const db = browser && getFirestore();
+    const db = browser && getFirestore(firebaseApp);
 
     const colRef = browser && collection(db, "posts");
 

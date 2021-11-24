@@ -17,7 +17,7 @@
     import { paginate, LightPaginationNav } from 'svelte-paginate'
     
     const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-    const db = browser && getFirestore();
+    const db = browser && getFirestore(firebaseApp);
     const colRef = browser && collection(db, "posts");
     let posts = [];
 
@@ -72,7 +72,7 @@
 <div class="paper container-md">
     <div class="row flex-spaces">
     <div class="form-group">
-        <label for="paperInputs1">Kata kunci {searchWord}</label>
+        <label for="paperInputs1">Kata kunci</label>
         <input type="text" placeholder="misal : ruko" bind:value={searchWord}/>
       </div>
 
