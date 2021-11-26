@@ -90,7 +90,9 @@
   <div class="row flex-spaces">
   <div class="form-group">
       <label for="paperInputs1">Masukan Kata kunci</label>
-      <input type="text" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
+      <div class="sm-12 md-12 lg-12 col">
+        <input type="text" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
+      </div>
     </div>
 
     <!-- <div class="form-group">
