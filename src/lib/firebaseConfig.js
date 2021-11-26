@@ -3,6 +3,8 @@ import { browser } from "$app/env";
 import { getFirestore } from "firebase/firestore";
 import {derived} from "svelte/store";
 
+export let isSignedIn = false;
+
 export const firebaseConfig = {
   
   apiKey: "AIzaSyAtFQ1idN8EfWztKDY9IpfUfk5CXvuO2G8",
