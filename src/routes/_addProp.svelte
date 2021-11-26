@@ -24,7 +24,7 @@
 
     const submitForm = async () => {
         if(propHarga > 0 && colRef != null){
-            const docRef = await addDoc(colRef, {
+            await addDoc(colRef, {
                 title: propTitle,
                 deskripsi: propKeterangan,
                 harga: propHarga,

@@ -8,7 +8,7 @@
     import { getFirestore, collection, 
       query, where, onSnapshot, 
       addDoc, doc, deleteDoc } from "firebase/firestore";
-      import { firebaseConfig } from "$lib/firebaseConfig";
+      import { firebaseConfig, isSignedIn } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
       
   import Listing from './_propListing.svelte';
@@ -41,9 +41,6 @@
 
   //untuk search
   let searchWord = "";
-
-  //untuk signedIn
-  let isSignedIn = false;
 
   function searchFunction(){
     items = posts.filter((post) => {

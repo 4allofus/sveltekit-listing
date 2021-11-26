@@ -1,10 +1,13 @@
 <script>
 
 import { Button } from "spaper";
-import Index from "./dev_firebase_index.svelte";
-
+import {isSignedIn} from "$lib/firebaseConfig";
 let toDark = "";
 let modes = "Light";
+
+function toggleSignedIn(){
+  isSignedIn = !isSignedIn;
+}
 
 function toDarkFuncion(){
   if(toDark == ""){
@@ -30,7 +33,7 @@ function toDarkFuncion(){
       <div class="collapsible-body">
         <ul class="inline">
           <li><a sveltekit:prefetch href="\">Home</a></li>
-          <li><a sveltekit:prefetch href="\admin">Admin</a></li>
+          <li><button on:click={toggleSignedIn}>Admin</button></li>
         </ul>
       </div>
     </div>
