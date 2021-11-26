@@ -1,9 +1,9 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { browser } from "$app/env";
 import { getFirestore } from "firebase/firestore";
-import {derived} from "svelte/store";
+import {writable} from "svelte/store";
 
-export let isSignedIn = derived(false);
+export let isSignedIn = writable(false);
 
 export const firebaseConfig = {
   

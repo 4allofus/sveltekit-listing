@@ -9,16 +9,6 @@ function toggleSignedIn(){
   isSignedIn = !isSignedIn;
 }
 
-function toDarkFuncion(){
-  if(toDark == ""){
-      toDark = "dark";
-      modes= "Dark";
-  }else{
-      toDark = "";
-      modes = "Light";
-  }
-}
-
 </script>
 <nav class="fixed split-nav">
     <div class="nav-brand">
@@ -39,6 +29,6 @@ function toDarkFuncion(){
     </div>
   </nav>
   
-<html lang="en" class="{toDark}">
+<html lang="en">
   <slot></slot>
 </html>
