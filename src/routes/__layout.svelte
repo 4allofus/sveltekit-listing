@@ -54,6 +54,6 @@ function toggleSignedIn(){
     </div>
   </nav>
   
-<html lang="en">
-  <slot class="dark"></slot>
+<html lang="en" class="dark">
+  <slot ></slot>
 </html>
