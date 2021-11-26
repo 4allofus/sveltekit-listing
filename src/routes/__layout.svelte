@@ -12,8 +12,9 @@ let modes = "Light";
 function toggleSignedIn(){
   //Admin - SignIn
   const auth = getAuth();
+  const provider = new GoogleAuthProvider();
 
-  getRedirectResult(auth)
+  signInWithPopup(auth, provider)
           .then((result) => {
             // This gives you a Google Access Token. You can use it to access Google APIs.
             const credential = GoogleAuthProvider.credentialFromResult(result);
