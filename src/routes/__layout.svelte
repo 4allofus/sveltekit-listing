@@ -13,7 +13,6 @@ function toggleSignedIn(){
   //Admin - SignIn
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
-  let isItTrue = false;
 
   signInWithPopup(auth, provider)
           .then((result) => {
@@ -25,7 +24,7 @@ function toggleSignedIn(){
             const user = result.user;
             
             if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-              isItTrue = true;
+              isSignedIn.update(isSignedIn => !isSignedIn);
             }
           }).catch((error) => {
             // Handle Errors here.
@@ -33,9 +32,6 @@ function toggleSignedIn(){
             const errorMessage = error.message;
           });
           
-          if(isItTrue){
-            isSignedIn.update(isSignedIn => !isSignedIn);
-          }
 }
 
 </script>
