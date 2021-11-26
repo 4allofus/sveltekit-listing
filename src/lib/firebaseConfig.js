@@ -3,7 +3,7 @@ import { browser } from "$app/env";
 import { getFirestore } from "firebase/firestore";
 import {derived} from "svelte/store";
 
-export let isSignedIn = false;
+export let isSignedIn = derived(false);
 
 export const firebaseConfig = {
   
