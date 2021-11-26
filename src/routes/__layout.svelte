@@ -13,6 +13,7 @@ function toggleSignedIn(){
   //Admin - SignIn
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
+  let isItTrue = false;
 
   signInWithPopup(auth, provider)
           .then((result) => {
@@ -24,15 +25,17 @@ function toggleSignedIn(){
             const user = result.user;
             
             if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-              isSignedIn.update(isSignedIn => !isSignedIn);
-              console.log("masuk uid");
+              isItTrue = true;
             }
           }).catch((error) => {
             // Handle Errors here.
             const errorCode = error.code;
             const errorMessage = error.message;
           });
-  
+          
+          if(isItTrue){
+            isSignedIn.update(isSignedIn => !isSignedIn);
+          }
 }
 
 </script>
