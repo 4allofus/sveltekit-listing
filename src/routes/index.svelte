@@ -43,7 +43,7 @@
   let searchWord = "";
 
   //writable store
-  $: isSignedIn_value;
+  $: isSignedIn_value = false;
   isSignedIn.subscribe(value => {
 		isSignedIn_value = value;
     console.log(isSignedIn_value);
