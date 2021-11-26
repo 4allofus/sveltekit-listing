@@ -49,6 +49,7 @@
     console.log(isSignedIn_value);
 	});
 
+  //search function
   function searchFunction(){
     items = posts.filter((post) => {
       return (post.kategori).toLowerCase().includes(searchWord.toLowerCase()) ||
