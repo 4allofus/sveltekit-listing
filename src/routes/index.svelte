@@ -74,9 +74,9 @@
 <div class="paper container-lg">
   <h3>Listing bank, tempatnya investasi</h3>
   <Typewriter loop>
-      <h5>Bawah NJOP</h5>
-      <h5>Property murah</h5>
-      <h5>Harga bawah pasar</h5>
+      <h4>Bawah NJOP</h4>
+      <h4>Property murah</h4>
+      <h4>Harga bawah pasar</h4>
   </Typewriter>
 </div>
 
@@ -87,9 +87,9 @@
 {/if}
 
 <div class="paper container-md">
-  <div class="row flex-spaces">
+  <div class="row">
   <div class="form-group">
-      <label for="paperInputs1">Masukan Kata kunci</label>
+      <label for="paperInputs1">Untuk Melakukan Pencarian, Masukan Kata kunci</label>
       <div class="sm-12 md-12 lg-12 col">
         <input type="text" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
       </div>
