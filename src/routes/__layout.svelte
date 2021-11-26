@@ -24,7 +24,9 @@ function toggleSignedIn(){
             const user = result.user;
             
             if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-              isSignedIn.update(isSignedIn => !isSignedIn);
+              isSignedIn.update(isSignedIn => true);
+            }else{
+              isSignedIn.update(isSignedIn => false);
             }
           }).catch((error) => {
             // Handle Errors here.
