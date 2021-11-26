@@ -72,11 +72,11 @@
 </script>
 
 <div class="paper container-lg">
-  <h2>Listing bank, tempat investasi property</h2>
+  <h3>Listing bank, tempatnya investasi</h3>
   <Typewriter loop>
-      <h3>Bawah NJOP</h3>
-      <h3>Property murah</h3>
-      <h3>Harga Covid</h3>
+      <h5>Bawah NJOP</h5>
+      <h5>Property murah</h5>
+      <h5>Harga bawah pasar</h5>
   </Typewriter>
 </div>
 
@@ -89,11 +89,11 @@
 <div class="paper container-md">
   <div class="row flex-spaces">
   <div class="form-group">
-      <label for="paperInputs1">Kata kunci</label>
-      <input type="text" placeholder="misal : ruko" bind:value={searchWord}/>
+      <label for="paperInputs1">Masukan Kata kunci</label>
+      <input type="text" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
     </div>
 
-    <div class="form-group">
+    <!-- <div class="form-group">
       <label for="paperSelects1">Daerah</label>
       <select id="paperSelects1">
         <option value="1">Option 1</option>
@@ -122,7 +122,7 @@
       </label>
     </fieldset>
 
-    <Button on:click={searchFunction}>Cari</Button>
+    <Button on:click={searchFunction}>Cari</Button> -->
   </div>
 </div>
 

@@ -41,14 +41,6 @@
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
-    //import { initializeApp, getApps, getApp } from "firebase/app";
-    /* import { getFirestore, collection, 
-              query, where, onSnapshot, 
-              addDoc, doc, deleteDoc,
-            getDoc} from "firebase/firestore"; */
-    //import { firebaseConfig } from "$lib/firebaseConfig";
-    //import { browser } from "$app/env";
-
     let propTitle = post.title
     let propKeterangan = post.deskripsi
     let propHarga = post.harga
