@@ -17,6 +17,3 @@ export const firebaseConfig = {
   measurementId: "G-39RZPFYC16"
   
 };
-
-export const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
-export const db = browser && getFirestore(firebaseApp);

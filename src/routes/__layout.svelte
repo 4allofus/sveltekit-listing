@@ -5,10 +5,23 @@ import {isSignedIn} from "$lib/firebaseConfig";
 import { getAuth, signInWithPopup, GoogleAuthProvider, 
         setPersistence, signInWithRedirect, browserSessionPersistence,
         getRedirectResult, inMemoryPersistence, } from "firebase/auth";
+import { subscribe } from "svelte/internal";
 
-let toDark = "";
-let modes = "Light";
+//Toggle DarkMode
+let isDark_value = false;
+$: darkMode = "light";
 
+function toggleDarkMode(){
+  if(isDark_value){
+    isDark_value = false;
+    darkMode = "light";
+  }else{
+    isDark_value = true;
+    darkMode = "dark";
+  }
+}
+
+//Toggle sign in
 function toggleSignedIn(){
   //Admin - SignIn
   const auth = getAuth();
@@ -45,15 +58,17 @@ function toggleSignedIn(){
       <input id="collapsible1" type="checkbox" name="collapsible1">
       <label for="collapsible1">
         <div class="bar1"></div>
+        <div class="bar2"></div>
       </label>
       <div class="collapsible-body">
         <ul class="inline">
           <li><button on:click={toggleSignedIn}>Admin</button></li>
+          <li><button on:click={toggleDarkMode}>{darkMode}</button></li>
         </ul>
       </div>
     </div>
   </nav>
   
-<html lang="en" class="dark">
+<html lang="en" class={darkMode}>
   <slot ></slot>
 </html>
