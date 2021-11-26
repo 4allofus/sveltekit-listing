@@ -78,7 +78,7 @@
   </Typewriter>
 </div>
 
-{#if isSignedIn_value === true}
+{#if $isSignedIn_value === true}
     <div class="paper continer-lg">
 	      <AddProp colRef = {colRef}/>
     </div>
