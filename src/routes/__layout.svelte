@@ -1,7 +1,7 @@
 <script>
 
 import { Button } from "spaper";
-import Index from "./index.svelte";
+import Index from "./dev_firebase_index.svelte";
 
 let toDark = "";
 let modes = "Light";

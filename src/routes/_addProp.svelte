@@ -2,17 +2,18 @@
     import 'papercss/dist/paper.min.css'
     import {Collapsible, Table, Input, Modal, Button, Select, Checkbox, Tabs, Tab} from 'spaper';
 
-    import { initializeApp, getApps, getApp } from "firebase/app";
+    /* import { initializeApp, getApps, getApp } from "firebase/app"; */
     import { getFirestore, collection, 
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc } from "firebase/firestore";
-    import { firebaseConfig } from "$lib/firebaseConfig";
-    import { browser } from "$app/env";
+    /* import { firebaseConfig } from "$lib/firebaseConfig";
+    import { browser } from "$app/env"; */
 
-    const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
+    /* const firebaseApp = browser && (getApps().length === 0 ? initializeApp(firebaseConfig) : getApp());
     const db = browser && getFirestore(firebaseApp);
+    const colRef = browser && collection(db, "posts"); */
 
-    const colRef = browser && collection(db, "posts");
+    export let colRef;
 
     let propTitle = "..."
     let propKeterangan = "..."
@@ -22,7 +23,7 @@
     let propHotList = false
 
     const submitForm = async () => {
-        if(propHarga > 0 && isSignedIn){
+        if(propHarga > 0 && colRef != null){
             const docRef = await addDoc(colRef, {
                 title: propTitle,
                 deskripsi: propKeterangan,
