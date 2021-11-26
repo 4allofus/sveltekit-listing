@@ -2,7 +2,7 @@
   //untuk posts
   import 'papercss/dist/paper.min.css'
 
-  import { Alert, Button } from 'spaper';
+  import { Alert, Button, Input } from 'spaper';
 
   import { initializeApp, getApps, getApp } from "firebase/app";
     import { getFirestore, collection, 
@@ -89,9 +89,9 @@
 <div class="paper container-md">
   <div class="row">
   <div class="form-group">
-      <label for="paperInputs1">Untuk Melakukan Pencarian, Masukan Kata kunci</label>
       <div class="sm-12 md-12 lg-12 col">
-        <input type="text" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
+        <Input label="Untuk Melakukan Pencarian, Masukan Kata kunci" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
+
       </div>
     </div>
 
