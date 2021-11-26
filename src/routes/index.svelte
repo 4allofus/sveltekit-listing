@@ -31,7 +31,7 @@
           let todo = {...doc.data(), id: doc.id};
           fbTodos = [todo, ...fbTodos];
         });
-        console.table(fbTodos);
+        //console.table(fbTodos);
         posts = fbTodos;
       });
 
@@ -47,7 +47,7 @@
 
   isSignedIn.subscribe(value => {
 		isSignedIn_value = value;
-    console.log(isSignedIn_value);
+    //console.log(isSignedIn_value);
 	});
 
   //search function
