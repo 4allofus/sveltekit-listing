@@ -5,7 +5,7 @@ import {isSignedIn} from "$lib/firebaseConfig";
 import { getAuth, signInWithPopup, GoogleAuthProvider, 
         setPersistence, signInWithRedirect, browserSessionPersistence,
         getRedirectResult, inMemoryPersistence, } from "firebase/auth";
-        
+
 let toDark = "";
 let modes = "Light";
 
@@ -23,7 +23,6 @@ function toggleSignedIn(){
             const user = result.user;
             
             if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
-              isSignedIn = true;
               isSignedIn.update(isSignedIn => !isSignedIn);
               console.log("masuk uid");
             }
