@@ -87,11 +87,10 @@
 {/if}
 
 <div class="paper container-md">
-  <div class="row">
   <div class="form-group">
+  <div class="row flex-left">
       <div class="sm-12 md-12 lg-12 col">
         <Input label="Untuk Melakukan Pencarian, Masukan Kata kunci" placeholder="misal : ruko, gudang, surabaya, bawah 3M." bind:value={searchWord} block/>
-
       </div>
     </div>
 
