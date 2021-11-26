@@ -42,6 +42,13 @@
   //untuk search
   let searchWord = "";
 
+  //writable store
+  let isSignedIn_value;
+  const unsubscribe = isSignedIn.subscribe(value => {
+		isSignedIn_value = value;
+    console.log(isSignedIn_value);
+	});
+
   function searchFunction(){
     items = posts.filter((post) => {
       return (post.kategori).toLowerCase().includes(searchWord.toLowerCase()) ||
@@ -71,7 +78,7 @@
   </Typewriter>
 </div>
 
-{#if isSignedIn === true}
+{#if isSignedIn_value === true}
     <div class="paper continer-lg">
 	      <AddProp colRef = {colRef}/>
     </div>

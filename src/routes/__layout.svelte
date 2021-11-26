@@ -7,7 +7,6 @@ let modes = "Light";
 
 function toggleSignedIn(){
   isSignedIn.update(isSignedIn => !isSignedIn);
-  console.log(isSignedIn);
 }
 
 </script>
