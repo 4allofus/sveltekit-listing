@@ -44,7 +44,7 @@
 
   //writable store
   let isSignedIn_value = false;
-  
+
   isSignedIn.subscribe(value => {
 		isSignedIn_value = value;
     console.log(isSignedIn_value);
@@ -139,6 +139,7 @@
                         propHotlist={item.hotlist}
                         web={'./propBlog/' + item.id}
                         propId={item.id}
+                        isSignedIn={isSignedIn_value}
                         />
         </div>
         {/each}

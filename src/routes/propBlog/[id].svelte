@@ -57,7 +57,6 @@
     let propHotList = post.hotlist
 
     const updateForm = async () => {
-      if(isSignedIn){
         const docRef = await setDoc(doc(db, "posts", id), {
             title: propTitle,
             deskripsi: propKeterangan,
@@ -66,7 +65,6 @@
             kategori: propKategori,
             hotlist: propHotList
         });
-        } 
         //console.log("updateForm");
      }
 
