@@ -6,7 +6,8 @@ let toDark = "";
 let modes = "Light";
 
 function toggleSignedIn(){
-  isSignedIn.set(!isSignedIn);
+  isSignedIn.update(isSignedIn => !isSignedIn);
+  console.log(isSignedIn);
 }
 
 </script>
