@@ -44,7 +44,7 @@
 
   //writable store
   let isSignedIn_value;
-  const unsubscribe = isSignedIn.subscribe(value => {
+  isSignedIn.subscribe(value => {
 		isSignedIn_value = value;
     console.log(isSignedIn_value);
 	});
