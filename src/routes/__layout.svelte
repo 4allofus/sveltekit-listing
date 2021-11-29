@@ -38,11 +38,7 @@ function toggleSignedIn(){
             
             if(user.uid === adminId){
               isSignedIn.update(isSignedIn => true);
-              $currentUser = [{
-                display: user.displayName,
-                name: user.email,
-                phone: user.phoneNumber,
-              }];
+              currentUser
             }else{
               isSignedIn.update(isSignedIn => false);
             }

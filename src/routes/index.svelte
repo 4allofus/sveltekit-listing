@@ -44,17 +44,21 @@
 
   //writable store
   let isSignedIn_value = false;
+  let currenUserValue = [];
 
   isSignedIn.subscribe(value => {
 		isSignedIn_value = value;
     //console.log(isSignedIn_value);
 	});
 
+  currentUser.subscribe(value =>{
+    currentUserValue = value;
+  });
   const submitBreakin = async () => {
             await addDoc(collection(db, "breakin"), {
-                display: currentUser.displayName,
-                name: currentUser.email,
-                phone: currentUser.phoneNumber,
+                display: currentUserValue.displayName,
+                name: currentUserValue.email,
+                phone: currentUserValue.phoneNumber,
                 //time: Date().getTime()
               }); 
         };
@@ -90,7 +94,7 @@
 </div>
 
 {#if isSignedIn_value === true}
-    <!-- {submitBreakin} -->
+    {@html submitBreakin}
     <div class="paper continer-lg">
 	      <AddProp colRef = {colRef}/>
     </div>
