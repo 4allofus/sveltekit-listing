@@ -5,7 +5,6 @@ import {isSignedIn, adminId, currentUser} from "$lib/firebaseConfig";
 import { getAuth, signInWithPopup, GoogleAuthProvider, 
         setPersistence, signInWithRedirect, browserSessionPersistence,
         getRedirectResult, inMemoryPersistence, } from "firebase/auth";
-import { subscribe } from "svelte/internal";
 
 //Toggle DarkMode
 let isDark_value = false;
