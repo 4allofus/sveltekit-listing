@@ -57,7 +57,7 @@
                 phone: currentUser.phoneNumber,
                 //time: Date().getTime()
               }); 
-        }
+        };
         
   //search function
   function searchFunction(){
