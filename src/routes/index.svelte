@@ -74,7 +74,7 @@
             (post.deskripsi).toLowerCase().includes(searchWord.toLowerCase());
   });
 
-  //$: console.log(items)
+  //$: console.log(items
   //ready to paginate
   $: paginatedItems = paginate({ items, pageSize, currentPage })
 
