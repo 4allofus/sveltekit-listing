@@ -44,7 +44,11 @@
 
   //writable store
   let isSignedIn_value = false;
-  let currenUserValue = [];
+  let currentUserValue = [{
+      display: "none",
+      name: "none",
+      phone: "none"
+  }];
 
   isSignedIn.subscribe(value => {
 		isSignedIn_value = value;
