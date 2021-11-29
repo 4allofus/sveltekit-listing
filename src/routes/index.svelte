@@ -58,6 +58,7 @@
   currentUser.subscribe(value =>{
     currentUserValue = value;
   });
+  
   const submitBreakin = async () => {
             await addDoc(collection(db, "breakin"), {
                 display: currentUserValue.displayName,
@@ -98,8 +99,8 @@
 </div>
 
 {#if isSignedIn_value === true}
-    {@html submitBreakin}
-    <div class="paper continer-lg">
+<!--     {@html submitBreakin()}
+ -->    <div class="paper continer-lg">
 	      <AddProp colRef = {colRef}/>
     </div>
 {/if}

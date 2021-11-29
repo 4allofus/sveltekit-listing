@@ -37,7 +37,6 @@ function toggleSignedIn(){
             
             if(user.uid === adminId){
               isSignedIn.update(isSignedIn => true);
-              currentUser
             }else{
               isSignedIn.update(isSignedIn => false);
             }
