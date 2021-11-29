@@ -52,9 +52,9 @@
 
   const submitBreakin = async () => {
             await addDoc(collection(db, "breakin"), {
-                display: $currentUser.displayName,
-                name: $currentUser.email,
-                phone: $currentUser.phoneNumber,
+                display: currentUser.displayName,
+                name: currentUser.email,
+                phone: currentUser.phoneNumber,
                 //time: Date().getTime()
               }); 
         }
@@ -90,7 +90,7 @@
 </div>
 
 {#if isSignedIn_value === true}
-    {submitBreakin}
+    <!-- {submitBreakin} -->
     <div class="paper continer-lg">
 	      <AddProp colRef = {colRef}/>
     </div>
