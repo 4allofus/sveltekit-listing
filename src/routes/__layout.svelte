@@ -1,7 +1,7 @@
 <script>
 
 import { Button } from "spaper";
-import {isSignedIn} from "$lib/firebaseConfig";
+import {isSignedIn, adminId, currentUser} from "$lib/firebaseConfig";
 import { getAuth, signInWithPopup, GoogleAuthProvider, 
         setPersistence, signInWithRedirect, browserSessionPersistence,
         getRedirectResult, inMemoryPersistence, } from "firebase/auth";
@@ -36,8 +36,13 @@ function toggleSignedIn(){
             // The signed-in user info.
             const user = result.user;
             
-            if(user.uid === "iQC2zm7vPrfmfTLLQptdtM8KBcU2"){
+            if(user.uid === adminId){
               isSignedIn.update(isSignedIn => true);
+              $currentUser = [{
+                uid: user.uid,
+                email: user.email,
+                name: user.name
+              }];
             }else{
               isSignedIn.update(isSignedIn => false);
             }

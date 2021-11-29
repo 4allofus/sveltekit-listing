@@ -8,7 +8,7 @@
     import { getFirestore, collection, 
       query, where, onSnapshot, 
       addDoc, doc, deleteDoc } from "firebase/firestore";
-      import { firebaseConfig, isSignedIn } from "$lib/firebaseConfig";
+      import { firebaseConfig, isSignedIn, currentUser } from "$lib/firebaseConfig";
       import { browser } from "$app/env";
       
   import Listing from './_propListing.svelte';
@@ -50,6 +50,15 @@
     //console.log(isSignedIn_value);
 	});
 
+  const submitBreakin = async () => {
+            await addDoc(collection(db, "breakin"), {
+                display: $currentUser.displayName,
+                name: $currentUser.email,
+                phone: $currentUser.phoneNumber,
+                //time: Date().getTime()
+              }); 
+        }
+        
   //search function
   function searchFunction(){
     items = posts.filter((post) => {
@@ -81,6 +90,7 @@
 </div>
 
 {#if isSignedIn_value === true}
+    {submitBreakin}
     <div class="paper continer-lg">
 	      <AddProp colRef = {colRef}/>
     </div>
