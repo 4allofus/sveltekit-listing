@@ -58,7 +58,7 @@
   currentUser.subscribe(value =>{
     currentUserValue = value;
   });
-  
+
   const submitBreakin = async () => {
             await addDoc(collection(db, "breakin"), {
                 display: currentUserValue.displayName,
@@ -68,6 +68,12 @@
               }); 
         };
         
+  //delete function
+  const delProp = async (no) => {
+          console.log("delProp" + no)
+          await deleteDoc(doc(db, "posts", no));
+      }
+      
   //search function
   function searchFunction(){
     items = posts.filter((post) => {
@@ -160,6 +166,7 @@
                         web={'./propBlog/' + item.id}
                         propId={item.id}
                         isSignedIn={isSignedIn_value}
+                        delProp={delProp}
                         />
         </div>
         {/each}
