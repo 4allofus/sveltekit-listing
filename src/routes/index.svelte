@@ -70,10 +70,10 @@
         
   //delete function
   const delProp = async (no) => {
-          console.log("delProp" + no)
+          //console.log("delProp" + no)
           await deleteDoc(doc(db, "posts", no));
       }
-      
+
   //search function
   function searchFunction(){
     items = posts.filter((post) => {
