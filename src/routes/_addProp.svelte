@@ -18,23 +18,37 @@
     let propKategori = ""
     let propHotList = false;
     let input;
+    let reader;
+    let file;
+
+    function onChange() {
+      file = input.files[0];
+		
+    if (file) {
+
+      reader = new FileReader();
+      reader.addEventListener("load", function () {
+        image.setAttribute("src", reader.result);
+      });
+      reader.readAsDataURL(file);
+    } 
+  }
 
     const submitForm = async () => {
-      const file = input.files[0];
-      const storage = getStorage(currFirebaseApp);
-      const fileRef = ref(storage, file);
+      const storageRef = firebase.storage().ref();
+      // Create a reference to 'mountains.jpg'
+      const fileRef = storageRef.child(file);
+
+      //const storage = getStorage(currFirebaseApp);
+      //const fileRef = ref(storage, file);
       console.log(fileRef.name);
       console.log(fileRef.fullPath);
       console.log(fileRef);
       
-      const reader = new FileReader();
-      reader.readAsDataURL(file);
-      
       if(propHarga > 0 && colRef != null){
-            uploadBytes(fileRef, reader).then((snapshot) => {
-                console.log('Uploaded a blob or file!');
+            fileRef.put(file).then(function(snapshot) {
+            console.log('Uploaded a blob or file!');
             });
-
             await addDoc(colRef, {
 
 
@@ -91,7 +105,7 @@
             </Select>         
           </div>
           <div class="sm-7 md-7 lg-7 col">
-            <input type="file" bind:this={input}>
+            <input type="file" on:change={onChange} bind:this={input}>
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <Button type="secondary" on:click={submitForm}>Submit</Button>
