@@ -5,7 +5,7 @@
       export let propSatuan = "Milyar";
       export let propKategori = "...";
       export let propHotlist = false;
-      export let propImage = "gs://allofussvelte.appspot.com/30%_.jpg"
+      export let propImage = "https://firebasestorage.googleapis.com/v0/b/allofussvelte.appspot.com/o/30%_.jpg"
       export let web = "empty";
       export let propId;
       export let delProp;
