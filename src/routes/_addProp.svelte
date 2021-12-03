@@ -23,6 +23,9 @@
       const storage = getStorage(currFirebaseApp);
       const fileRef = ref(storage, files[0].name);
       console.log(files);
+      console.log(fileRef.name);
+      console.log(fileRef.fullPath);
+      console.log(fileRef);
 
         if(propHarga > 0 && colRef != null){
             await addDoc(colRef, {
