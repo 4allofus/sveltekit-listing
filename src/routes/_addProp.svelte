@@ -6,7 +6,7 @@
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc } from "firebase/firestore";
 
-    import { getStorage, ref } from "firebase/storage";
+    import { getStorage, ref, uploadBytes} from "firebase/storage";
 
     export let colRef;
     export let currFirebaseApp;
@@ -28,6 +28,10 @@
       console.log(fileRef);
 
         if(propHarga > 0 && colRef != null){
+            uploadBytes(fileRef, file).then((snapshot) => {
+            console.log('Uploaded a blob or file!');
+            });
+
             await addDoc(colRef, {
 
 
