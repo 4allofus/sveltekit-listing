@@ -37,7 +37,7 @@
 
     const submitForm = async () => {
       const storage = getStorage(currFirebaseApp);
-      const fileRef = ref(storage, file);
+      const fileRef = storage.ref().child(file);
       console.log(fileRef.name);
       console.log(fileRef.fullPath);
       console.log(fileRef);
