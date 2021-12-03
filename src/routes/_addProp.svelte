@@ -28,15 +28,13 @@
       console.log(fileRef);
 
       const reader = new FileReader();
-      /* reader.addEventListener("load", function () {
+      reader.addEventListener("load", function () {
         image.setAttribute("src", reader.result);
-      }); */
+      });
       reader.readAsDataURL(input.files[0]);
-
-      
       
       if(propHarga > 0 && colRef != null){
-            uploadBytes(fileRef, rea).then((snapshot) => {
+            uploadBytes(fileRef, reader).then((snapshot) => {
                 console.log('Uploaded a blob or file!');
             });
 
