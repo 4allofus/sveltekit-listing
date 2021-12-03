@@ -21,10 +21,12 @@
     let reader;
     let file;
 
+    //get file
     function onChange() {
       file = input.files[0];
-  }
+    }
 
+    //submit form
     const submitForm = async () => {
       const storage = getStorage(currFirebaseApp);
       const fileRef = ref(storage, file.name);
@@ -32,7 +34,7 @@
       
       if(propHarga > 0 && colRef != null){
             uploadBytes(fileRef, file).then((snapshot) => {
-              console.log('Uploaded a blob or file!');
+              //console.log('Uploaded a blob or file!');
             });
             await addDoc(colRef, {
 
