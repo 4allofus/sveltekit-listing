@@ -6,7 +6,7 @@
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc } from "firebase/firestore";
 
-    import { getStorage, ref, uploadBytes, put} from "firebase/storage";
+    import { getStorage, ref, uploadBytes} from "firebase/storage";
 
     export let colRef;
     export let currFirebaseApp;
@@ -26,11 +26,11 @@
 		
     if (file) {
 
-      /* reader = new FileReader();
+      reader = new FileReader();
       reader.addEventListener("load", function () {
         image.setAttribute("src", reader.result);
       });
-      reader.readAsDataURL(file); */
+      reader.readAsDataURL(file);
       console.log(file);
     } 
   }
@@ -41,8 +41,8 @@
       console.log(fileRef);
       
       if(propHarga > 0 && colRef != null){
-            await fileRef.put(file).then(function(snapshot) {
-            console.log('Uploaded a blob or file!');
+            uploadBytes(fileRef, reader).then((snapshot) => {
+              console.log('Uploaded a blob or file!');
             });
             await addDoc(colRef, {
 
