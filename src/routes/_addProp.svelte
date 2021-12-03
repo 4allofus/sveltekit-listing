@@ -17,7 +17,7 @@
     let propSatuan = "Milyar"
     let propKategori = ""
     let propHotList = false
-    $: filename;
+    let filename;
 
     const submitForm = async () => {
       const storage = getStorage(currFirebaseApp);
