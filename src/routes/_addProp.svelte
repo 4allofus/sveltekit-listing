@@ -43,8 +43,7 @@
         propSatuan = "Milyar"
         propKategori = ""
         propHotList = false
-        filename = ""
-        
+      
         //console.log("SubmitForm");
      }
 
