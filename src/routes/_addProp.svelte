@@ -23,16 +23,6 @@
 
     function onChange() {
       file = input.files[0];
-		
-    if (file) {
-
-      reader = new FileReader();
-      reader.addEventListener("load", function () {
-        image.setAttribute("src", reader.result);
-      });
-      reader.readAsDataURL(file);
-      console.log(file);
-    } 
   }
 
     const submitForm = async () => {
@@ -41,7 +31,7 @@
       console.log(fileRef);
       
       if(propHarga > 0 && colRef != null){
-            uploadBytes(fileRef, reader).then((snapshot) => {
+            uploadBytes(fileRef, file).then((snapshot) => {
               console.log('Uploaded a blob or file!');
             });
             await addDoc(colRef, {
