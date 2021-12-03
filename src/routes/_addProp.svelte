@@ -82,7 +82,6 @@
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <input type="file" bind:files>
-            <p>filename : {files[0].name}</p>
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <Button type="secondary" on:click={submitForm}>Submit</Button>
