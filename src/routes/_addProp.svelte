@@ -43,9 +43,9 @@
       console.log(fileRef);
       
       if(propHarga > 0 && colRef != null){
-            await fileRef.put(file).then(function(snapshot) {
+            /* await fileRef.put(file).then(function(snapshot) {
             console.log('Uploaded a blob or file!');
-            });
+            }); */
             await addDoc(colRef, {
 
 
