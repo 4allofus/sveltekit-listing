@@ -82,8 +82,6 @@
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <input type="file" bind:filename>
-            <p>filename : {filename}</p>
-            <img src={filename} alt="Random Unsplash">
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <Button type="secondary" on:click={submitForm}>Submit</Button>
