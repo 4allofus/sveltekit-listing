@@ -6,7 +6,7 @@
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc } from "firebase/firestore";
 
-    import { getStorage, ref, uploadBytes} from "firebase/storage";
+    import { getStorage, ref, uploadBytes, put} from "firebase/storage";
 
     export let colRef;
     export let currFirebaseApp;
@@ -36,12 +36,8 @@
   }
 
     const submitForm = async () => {
-      const storageRef = firebase.storage().ref();
-      // Create a reference to 'mountains.jpg'
-      const fileRef = storageRef.child(file);
-
-      //const storage = getStorage(currFirebaseApp);
-      //const fileRef = ref(storage, file);
+      const storage = getStorage(currFirebaseApp);
+      const fileRef = ref(storage, file);
       console.log(fileRef.name);
       console.log(fileRef.fullPath);
       console.log(fileRef);
