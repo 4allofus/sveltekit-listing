@@ -27,9 +27,17 @@
       console.log(fileRef.fullPath);
       console.log(fileRef);
 
-        if(propHarga > 0 && colRef != null){
-            uploadBytes(fileRef, file).then((snapshot) => {
-            console.log('Uploaded a blob or file!');
+      const reader = new FileReader();
+      /* reader.addEventListener("load", function () {
+        image.setAttribute("src", reader.result);
+      }); */
+      reader.readAsDataURL(files);
+
+      
+      
+      if(propHarga > 0 && colRef != null){
+            uploadBytes(fileRef, rea).then((snapshot) => {
+                console.log('Uploaded a blob or file!');
             });
 
             await addDoc(colRef, {
