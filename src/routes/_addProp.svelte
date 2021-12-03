@@ -21,7 +21,7 @@
 
     const submitForm = async () => {
       const storage = getStorage(currFirebaseApp);
-      const fileRef = ref(storage, filename);
+      const fileRef = ref(storage, filename[0].name);
       console.log(filename);
 
         if(propHarga > 0 && colRef != null){
