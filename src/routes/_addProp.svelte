@@ -26,11 +26,12 @@
 		
     if (file) {
 
-      reader = new FileReader();
+      /* reader = new FileReader();
       reader.addEventListener("load", function () {
         image.setAttribute("src", reader.result);
       });
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file); */
+      console.log(file);
     } 
   }
 
