@@ -31,7 +31,7 @@
       /* reader.addEventListener("load", function () {
         image.setAttribute("src", reader.result);
       }); */
-      reader.readAsDataURL(files);
+      reader.readAsDataURL(input.files[0]);
 
       
       
