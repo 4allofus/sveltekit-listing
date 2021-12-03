@@ -107,7 +107,7 @@
 {#if isSignedIn_value === true}
 <!--     {@html submitBreakin()}
  -->    <div class="paper continer-lg">
-	      <AddProp colRef = {colRef}/>
+	      <AddProp currFirebaseApp = {firebaseApp}  colRef = {colRef}/>
     </div>
 {/if}
 

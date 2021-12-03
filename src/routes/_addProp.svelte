@@ -6,7 +6,10 @@
               query, where, onSnapshot, 
               addDoc, doc, deleteDoc } from "firebase/firestore";
 
+    import { getStorage, ref } from "firebase/storage";
+
     export let colRef;
+    export let currFirebaseApp;
 
     let propTitle = ""
     let propKeterangan = ""
@@ -14,11 +17,17 @@
     let propSatuan = "Milyar"
     let propKategori = ""
     let propHotList = false
-    let filename = "";
+    $: filename = "";
 
     const submitForm = async () => {
+      const storage = getStorage(currFirebaseApp);
+      const fileRef = ref(storage, {filename});
+      console.log(filename);
+
         if(propHarga > 0 && colRef != null){
             await addDoc(colRef, {
+
+
                 title: propTitle,
                 deskripsi: propKeterangan,
                 harga: propHarga,
