@@ -17,21 +17,21 @@
     let propSatuan = "Milyar"
     let propKategori = ""
     let propHotList = false
-    let files;
+    let filename;
 
     const submitForm = async () => {
+      const file = filename.files[0];
       const storage = getStorage(currFirebaseApp);
-      const fileRef = ref(storage, files[0].name);
-      console.log(files);
+      const fileRef = ref(storage, file);
       console.log(fileRef.name);
       console.log(fileRef.fullPath);
       console.log(fileRef);
-
+      
       const reader = new FileReader();
       reader.addEventListener("load", function () {
         image.setAttribute("src", reader.result);
       });
-      reader.readAsDataURL(input.files[0]);
+      reader.readAsDataURL(file);
       
       if(propHarga > 0 && colRef != null){
             uploadBytes(fileRef, reader).then((snapshot) => {
@@ -94,7 +94,7 @@
             </Select>         
           </div>
           <div class="sm-7 md-7 lg-7 col">
-            <input type="file" bind:files>
+            <input type="file" bind:this={filename}>
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <Button type="secondary" on:click={submitForm}>Submit</Button>
