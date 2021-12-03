@@ -8,12 +8,13 @@
 
     export let colRef;
 
-    let propTitle = "..."
-    let propKeterangan = "..."
+    let propTitle = ""
+    let propKeterangan = ""
     let propHarga = 0
     let propSatuan = "Milyar"
-    let propKategori = "..."
+    let propKategori = ""
     let propHotList = false
+    let filename = "";
 
     const submitForm = async () => {
         if(propHarga > 0 && colRef != null){
@@ -27,12 +28,13 @@
             }); 
         }
 
-        propTitle = "..."
-        propKeterangan = "..."
+        propTitle = ""
+        propKeterangan = ""
         propHarga = 0
         propSatuan = "Milyar"
-        propKategori = "..."
+        propKategori = ""
         propHotList = false
+        filename = ""
         
         //console.log("SubmitForm");
      }
@@ -43,10 +45,10 @@
     <div class="form-group">
       <div class="row flex-left">
         <div class="sm-12 md-12 lg-12 col">
-          <Input label="Judul" placeholder="***" bind:value={propTitle} block/>
+          <Input label="Judul"  bind:value={propTitle} block/>
         </div>
         <div class="sm-12 md-12 lg-12 col">
-          <Input rows="8" type="textarea" placeholder="..." bind:value={propKeterangan} block/>
+          <Input rows="8" type="textarea" bind:value={propKeterangan} block/>
         </div>
           <div class="col-fill col">
             <input type=number label="Harga" bind:value={propHarga} min=0 max=1000>
@@ -69,6 +71,9 @@
               <option value="Ruko, Komersial, Gudang">Ruko, Komersial, Gudang</option>
               <option value="Tanah">Tanah</option>
             </Select>         
+          </div>
+          <div class="sm-7 md-7 lg-7 col">
+            <input type="file" bind:value={filename}>
           </div>
           <div class="sm-7 md-7 lg-7 col">
             <Button type="secondary" on:click={submitForm}>Submit</Button>
