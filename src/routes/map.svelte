@@ -11,7 +11,7 @@
 
    try{
     console.log("enter loader");
-    loader = browser && new google.maps.plugins.loader.Loader({
+    loader = new google.maps.plugins.loader.Loader({
     apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
     });
@@ -28,7 +28,7 @@
     if(loader != null){
         console.log("enter google maps");
         browser && loader.load().then(() => {
-            map = browser && new google.maps.Map(container, {
+            map = new google.maps.Map(container, {
             center: { lat: -34.397, lng: 150.644 },
             zoom: 8,
         });
