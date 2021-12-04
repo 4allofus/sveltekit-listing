@@ -3,7 +3,7 @@
     import 'papercss/dist/paper.min.css'
     import { Alert, Button, Input } from 'spaper';
     import { mapConfig } from "$lib/firebaseConfig";
-    import Map from './Map.svelte';
+    import Map from './map.svelte';
 
 </script>
 
