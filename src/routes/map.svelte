@@ -19,10 +19,11 @@
 }
 </script>
 
-<script
-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE&callback=initMap&v=weekly"
-async
-></script>
+<svelte:head>
+	<script defer async
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE&callback=initMap&v=weekly"
+	</script>
+</svelte:head>
 
 <div class="paper container-lg">
   <div id="map"></div>
