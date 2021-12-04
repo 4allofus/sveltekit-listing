@@ -3,6 +3,7 @@ import {writable} from "svelte/store";
 export let isSignedIn = writable(false);
 export let currentUser = writable([]);
 export const adminId = "iQC2zm7vPrfmfTLLQptdtM8KBcU2";
+export const mapConfig = "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE";
 
 export const firebaseConfig = {
   
