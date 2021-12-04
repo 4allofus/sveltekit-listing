@@ -9,7 +9,7 @@
 
    
    const loader = new google.maps.plugins.loader.Loader({
-    apiKey: mapConfig,
+    apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
     });
 
