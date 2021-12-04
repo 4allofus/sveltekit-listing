@@ -1,7 +1,6 @@
-<script context="module">
+<script context="module" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE&callback=initMap">
 
   export const load = async ({  }) =>{
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE&callback=initMap&v=weekly"
         const ready = true;
       return{
         props: {
@@ -20,6 +19,7 @@
 
 <div class="paper container-lg">
   {#if ready}
-  <Map/>
+    <h1>Map is ready</h1>
+    <Map/>
   {/if}
 </div>
