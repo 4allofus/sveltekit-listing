@@ -12,8 +12,5 @@
 </script>
 
 <div class="paper container-lg">
-  {#if isReady_value === true}
-    <h1>Map is ready</h1>
     <Map/>
-  {/if}
 </div>
