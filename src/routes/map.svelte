@@ -14,27 +14,29 @@
     version: "weekly",
     });
     } catch(e){
-        console.log("catch error....");
+        console.log("e.mesasge");
     }
-    console.log("enter google maps");
     /* loader.load().then(() => {
         map = browser &&  new google.maps.Map(container, {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-    });
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
+        });
     });*/
-
-    browser && loader.load().then(() => {
-        map = browser && new google.maps.Map(container, {
-        center: { lat: -34.397, lng: 150.644 },
-        zoom: 8,
-    });
-        console.log("enter container");
-        isReady.update(isReady => true);
-    })
-    .catch(e => {
-        console.log("catch - error");
-    });
+    
+    if(loader != null){
+        console.log("enter google maps");
+        browser && loader.load().then(() => {
+            map = browser && new google.maps.Map(container, {
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
+        });
+            console.log("enter container");
+            isReady.update(isReady => true);
+        })
+        .catch(e => {
+            console.log("catch - error");
+        });
+    }
 </script>
 
 <style>
