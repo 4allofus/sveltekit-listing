@@ -13,13 +13,23 @@
     version: "weekly",
     });
 
-    loader.load().then(() => {
+    /* loader.load().then(() => {
         map = browser &&  new google.maps.Map(container, {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
     });
     });
-
+ */
+    browser && loader.loadCallback(e => {
+    if (e) {
+        console.log(e);
+    } else {
+        map = browser && new google.maps.Map(container, {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+        });
+    }
+    });
 </script>
 
 <style>
