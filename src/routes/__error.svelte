@@ -10,6 +10,7 @@
 
 <script>
 import { Alert } from "spaper";
+import 'papercss/dist/paper.min.css'
 
 	export let title;
 </script>

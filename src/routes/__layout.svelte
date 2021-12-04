@@ -1,5 +1,5 @@
 <script>
-
+import 'papercss/dist/paper.min.css'
 import { Button } from "spaper";
 import {isSignedIn, adminId, currentUser} from "$lib/firebaseConfig";
 import { getAuth, signInWithPopup, GoogleAuthProvider, 

@@ -3,20 +3,18 @@
    let map;
    let zoom = 8;
    let center = {lat: -34.397, lng: 150.644};
+   import { browser } from "$app/env";
+
    
    import { onMount } from 'svelte';
    
-   /* onMount(async () => {
-       map = new google.maps.Map(container, {
+   onMount(async () => {
+       map = browser && new google.maps.Map(container, {
            zoom,
            center,
        });
-   }); */
+   });
 
-    map = new google.maps.Map(container, {
-        zoom,
-        center,
-    });
 </script>
 
 <style>
