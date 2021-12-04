@@ -6,12 +6,17 @@
    
    import { onMount } from 'svelte';
    
-   onMount(async () => {
+   /* onMount(async () => {
        map = new google.maps.Map(container, {
            zoom,
            center,
        });
-   });
+   }); */
+
+    map = new google.maps.Map(container, {
+        zoom,
+        center,
+    });
 </script>
 
 <style>
@@ -21,4 +26,5 @@
 }
 </style>
 
+<h1>map called</h1>
 <div class="full-screen" bind:this={container}></div>
