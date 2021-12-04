@@ -4,9 +4,9 @@
    let zoom = 8;
    let center = {lat: -34.397, lng: 150.644};
 
-   import { mapConfig } from "$lib/firebaseConfig";
+   import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
-   
+
    const loader = browser && new google.maps.plugins.loader.Loader({
     apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
@@ -24,6 +24,7 @@
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
     });
+        isReady.update(isReady => true);
     })
     .catch(e => {
         // do something
