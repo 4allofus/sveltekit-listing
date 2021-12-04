@@ -16,7 +16,7 @@
     version: "weekly",
     });
     } catch(e){
-        console.log("e.mesasge");
+        console.log(e.message);
     }
     /* loader.load().then(() => {
         map = browser &&  new google.maps.Map(container, {
