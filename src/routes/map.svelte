@@ -7,9 +7,11 @@
    import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
 
+   let loader;
+
    try{
     console.log("enter loader");
-    const loader = browser && new google.maps.plugins.loader.Loader({
+    loader = browser && new google.maps.plugins.loader.Loader({
     apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
     });
