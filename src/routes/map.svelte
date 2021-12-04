@@ -8,7 +8,7 @@
    import { browser } from "$app/env";
 
     console.log("enter loader");
-   const loader = browser && google.maps.plugins.loader.Loader({
+   const loader = browser && new google.maps.plugins.loader.Loader({
     apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
     });
