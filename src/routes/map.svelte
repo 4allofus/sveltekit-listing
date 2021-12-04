@@ -6,15 +6,15 @@
 
     //import {Loader} from "@googlemaps/js-api-loader"
    import { mapConfig } from "$lib/firebaseConfig";
-
+   import { browser } from "$app/env";
    
-   const loader = new google.maps.plugins.loader.Loader({
+   const loader = browser && new google.maps.plugins.loader.Loader({
     apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
     });
 
     loader.load().then(() => {
-        map = new google.maps.Map(container, {
+        map = browser &&  new google.maps.Map(container, {
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
     });
