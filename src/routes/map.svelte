@@ -1,4 +1,4 @@
-<script src="https://unpkg.com/@googlemaps/js-api-loader@1.0.0/dist/index.min.js">
+<script>
    let container;
    let map;
    let zoom = 8;
