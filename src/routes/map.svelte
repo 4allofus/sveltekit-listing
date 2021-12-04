@@ -4,7 +4,7 @@
    let zoom = 8;
    let center = {lat: -34.397, lng: 150.644};
 
-   import { Loader } from "googlemaps/js-api-loader"
+   import { Loader } from "@googlemaps/js-api-loader"
    import { mapConfig } from "$lib/firebaseConfig";
 
    
