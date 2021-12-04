@@ -27,7 +27,7 @@
         isReady.update(isReady => true);
     })
     .catch(e => {
-        // do something
+        console.log("error");
     });
 </script>
 
