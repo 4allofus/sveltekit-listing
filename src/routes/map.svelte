@@ -3,17 +3,22 @@
    let map;
    let zoom = 8;
    let center = {lat: -34.397, lng: 150.644};
-   import { browser } from "$app/env";
+
+   import { Loader } from "@googlemaps/js-api-loader"
+   import { mapConfig } from "$lib/firebaseConfig";
 
    
-   import { onMount } from 'svelte';
-   
-   onMount(async () => {
-       map = browser && new google.maps.Map(container, {
-           zoom,
-           center,
-       });
-   });
+   const loader = new Loader({
+    apiKey: mapConfig,
+    version: "weekly",
+    });
+
+    loader.load().then(() => {
+        map = new google.maps.Map(container, {
+        center: { lat: -34.397, lng: 150.644 },
+        zoom: 8,
+    });
+    });
 
 </script>
 
