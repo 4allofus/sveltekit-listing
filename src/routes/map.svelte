@@ -7,11 +7,12 @@
    import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
 
+    console.log("enter loader");
    const loader = browser && google.maps.plugins.loader.Loader({
     apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
     version: "weekly",
     });
-
+    console.log("enter google maps");
     /* loader.load().then(() => {
         map = browser &&  new google.maps.Map(container, {
         center: { lat: -34.397, lng: 150.644 },
@@ -24,10 +25,11 @@
         center: { lat: -34.397, lng: 150.644 },
         zoom: 8,
     });
+        console.log("enter container");
         isReady.update(isReady => true);
     })
     .catch(e => {
-        console.log("error");
+        console.log("catch - error");
     });
 </script>
 
