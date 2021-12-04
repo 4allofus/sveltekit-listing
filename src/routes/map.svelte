@@ -3,8 +3,17 @@
     import 'papercss/dist/paper.min.css'
     import { Alert, Button, Input } from 'spaper';
     import { mapConfig } from "$lib/firebaseConfig";
+    import { onMount } from 'svelte';
 
-    function initMap() {
+    onMount(async () => {
+		map = new google.maps.Map(container, {
+            zoom,
+			center,
+			styles: mapStyles // optional
+		});
+	});
+
+    /* function initMap() {
     // The location of Uluru
     const uluru = { lat: -25.344, lng: 131.036 };
     // The map, centered at Uluru
@@ -17,7 +26,7 @@
       position: uluru,
       map: map,
     });
-}
+    } */
 </script>
 
 
