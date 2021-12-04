@@ -1,14 +1,14 @@
-<script>
+<script src="https://unpkg.com/@googlemaps/js-api-loader@1.0.0/dist/index.min.js">
    let container;
    let map;
    let zoom = 8;
    let center = {lat: -34.397, lng: 150.644};
 
-   import Loader from "@googlemaps/js-api-loader"
+    //import {Loader} from "@googlemaps/js-api-loader"
    import { mapConfig } from "$lib/firebaseConfig";
 
    
-   const loader = new Loader({
+   const loader = new google.maps.plugins.loader.Loader({
     apiKey: mapConfig,
     version: "weekly",
     });
