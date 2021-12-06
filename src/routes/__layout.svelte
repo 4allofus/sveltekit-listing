@@ -69,5 +69,5 @@ function toggleSignedIn(){
   </nav>
   
 <html lang="en" class={darkMode}>
-  <slot ></slot>
+  <slot></slot>
 </html>

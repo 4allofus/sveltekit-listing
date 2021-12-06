@@ -48,5 +48,4 @@
 }
 </style>
 
-<h1>map called</h1>
 <div class="full-screen" bind:this={container}></div>
