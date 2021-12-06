@@ -47,10 +47,11 @@
 <style>
     .responsive {
         width: 100%;
+        max-width: 400px;
         height: auto;
         }
 </style>
 
-<div class="paper container-md">
+<div class="paper container-lg">
     <div class="responsive" bind:this={container}></div>
 </div>
