@@ -44,7 +44,7 @@
 
 <style>
     .responsive {
-        width: 100%;
+        width: 100vw;
         max-width: 400px;
         height: auto;
         }
