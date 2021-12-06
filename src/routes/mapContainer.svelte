@@ -12,5 +12,6 @@
 </script>
 
 <div class="paper container-lg">
+    <Reset />
     <Map/>
 </div>

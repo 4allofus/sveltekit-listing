@@ -6,13 +6,14 @@
 
    import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
+   import { Reset } from 'styled-reset'
 
    let loader;
 
    try{
     console.log("enter loader");
     loader = new google.maps.plugins.loader.Loader({
-    apiKey: "AIzaSyBWoZVhsZoSFSNG_fcyioe3ef5kzeuuqPE",
+    apiKey: mapConfig,
     version: "weekly",
     });
     } catch(e){
@@ -48,4 +49,7 @@
 }
 </style>
 
-<div class="full-screen" bind:this={container}></div>
+<div class="paper container-lg">
+    <Reset />
+    <div class="full-screen" bind:this={container}></div>
+</div>
