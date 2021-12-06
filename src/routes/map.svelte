@@ -3,9 +3,12 @@
    let map;
    let zoom = 8;
    let center = {lat: -34.397, lng: 150.644};
+   
 
    import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
+   import 'papercss/dist/paper.min.css'
+
 
    let loader;
 
@@ -41,12 +44,4 @@
     }
 </script>
 
-<style>
-.full-screen {
-   width: 100vw;
-   height: 100vh;
-}
-</style>
-
-<h1>map called</h1>
-<div class="full-screen" bind:this={container}></div>
+<div class="paper container-md" bind:this={container}></div>
