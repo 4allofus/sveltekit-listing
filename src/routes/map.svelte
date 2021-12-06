@@ -44,4 +44,13 @@
     }
 </script>
 
-<div class="paper container-md" bind:this={container}></div>
+<style>
+    .responsive {
+        width: 100%;
+        height: auto;
+        }
+</style>
+
+<div class="paper container-md">
+    <div class="responsive" bind:this={container}></div>
+</div>
