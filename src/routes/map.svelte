@@ -7,8 +7,6 @@
 
    import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
-   import 'papercss/dist/paper.min.css'
-
 
    let loader;
 
@@ -52,6 +50,4 @@
         }
 </style>
 
-<div class="paper container-lg">
-    <div class="responsive" bind:this={container}></div>
-</div>
+<div class="responsive" bind:this={container}></div>
