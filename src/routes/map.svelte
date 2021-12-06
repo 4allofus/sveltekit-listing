@@ -2,7 +2,7 @@
    let container;
    let map;
    let zoom = 8;
-   let center = {lat: -34.397, lng: 150.644};
+   let center = {lat: 6.2088, lng: 106.8456};
    
 
    import { mapConfig, isReady} from "$lib/firebaseConfig";
@@ -32,8 +32,8 @@
         console.log("enter google maps");
         browser && loader.load().then(() => {
             map = new google.maps.Map(container, {
-            center: { lat: -34.397, lng: 150.644 },
-            zoom: 8,
+            center: center,
+            zoom: zoom,
         });
             console.log("enter container");
             isReady.update(isReady => true);
