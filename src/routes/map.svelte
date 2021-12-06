@@ -2,8 +2,7 @@
    let container;
    let map;
    let zoom = 8;
-   let center = {lat: 6.2088, lng: 106.8456};
-   
+   let center = {lat: -34.397, lng: 150.644};
 
    import { mapConfig, isReady} from "$lib/firebaseConfig";
    import { browser } from "$app/env";
@@ -30,8 +29,8 @@
         console.log("enter google maps");
         browser && loader.load().then(() => {
             map = new google.maps.Map(container, {
-            center: center,
-            zoom: zoom,
+            center: { lat: -34.397, lng: 150.644 },
+            zoom: 8,
         });
             console.log("enter container");
             isReady.update(isReady => true);
@@ -43,10 +42,11 @@
 </script>
 
 <style>
-    .responsive {
-        width: 400px;
-        height: auto;
-        }
+.full-screen {
+   width: 100vw;
+   height: 100vh;
+}
 </style>
 
-<div class="responsive" bind:this={container}></div>
+<h1>map called</h1>
+<div class="full-screen" bind:this={container}></div>
